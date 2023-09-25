@@ -1,21 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const Recipes = require('../models/Recipes');
-const RecipesInfo = require('../models/RecipeInfo');
 const { header } = require('express-validator');
 
 router.get('/', (req, res) => {
     res.send("this is recipes");
 });
 
-router.post('/recipiesinfo', async (req, res, next) => {
+router.post('/addrecipies', async (req, res, next) => {
 
     let success = false
 
     try {
-        const { title, veg, cheap, quick, sustainable, iname, inameclean, iimage, iamount } = req.body
+        const { title, veg, cheap, quick, sustainable, iname, inameclean, iimage, iamount, readyInMin, servings, image, summary, dishTypes, instructions, steps } = req.body
 
-        const recipesinfo = await RecipesInfo.create({
+        const recipes = await Recipes.create({
             title: title,
             veg: veg,
             cheap: cheap,
@@ -24,37 +23,29 @@ router.post('/recipiesinfo', async (req, res, next) => {
             iname: iname,
             inameclean: inameclean,
             iimage: iimage,
-            iamount: iamount
+            iamount: iamount,
+            readyInMin: readyInMin,
+            servings: servings,
+            image: image,
+            summary: summary,
+            dishTypes: dishTypes,
+            instructions: instructions,
+            steps: steps
         });
 
-        const saveRecipesInfo = await recipesinfo.save();
-        console.log(saveRecipesInfo)
+        const saveRecipes = await recipes.save();
+        console.log(saveRecipes)
         success = true
-        const { readyInMin, servings, image, summary, dishTypes, instructions, steps } = req.body
-
-    const recipes = await Recipes.create({
-        recipeId: recipesinfo.id,
-        readyInMin: readyInMin,
-        servings: servings,
-        image: image,
-        summary: summary,
-        dishTypes: dishTypes,
-        instructions: instructions,
-        steps: steps
-    });
-    const saveRecipes = await recipes.save();
-    console.log(saveRecipes)
-    success = true
-    res.json({ success, saveRecipes })
+        res.json({ success, saveRecipes })
     } catch (error) {
         console.log(error.message);
         res.status(500).send("Internal Server Error");
     }
 
 });
-router.post('/addrecipies/:id', async (req, res) => {
+router.post('/editrecipies/:id', async (req, res) => {
     let success = false
-    
+
 });
 
 module.exports = router;
