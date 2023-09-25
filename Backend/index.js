@@ -11,6 +11,7 @@ app.use(express.json())
 
 //routes
 app.use('/user', require('./routes/user'))
+app.use('/recipes', require('./routes/recipes'))
 app.get('/', (req, res)=>{
     res.send('hello')
 })

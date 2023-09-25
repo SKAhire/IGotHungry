@@ -64,13 +64,14 @@ router.post('/adduser', upload.single('profileImg') , [
             username: username,
             email: email,
             password: secPass,
+            profileImg: "test.png"
             // profileImg: {
             //     data: fs.readFileSync(path.join(__dirname + '/uploads/' + profileImg)),
             //     contentType: 'image/png'
             // }
         })
 
-        const saveUser = await user.save();
+        await user.save();
         const data = {
             user: {
                 id: user.id,
