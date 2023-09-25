@@ -18,5 +18,5 @@ app.get('/', (req, res)=>{
 
 const port = 5000;
 app.listen(port, ()=>{
-    console.log(`Backend port is ${port} ${process.env.REACT_APP_MONGOOSEURI}`)
+    console.log(`Backend port is ${port}`)
 })
