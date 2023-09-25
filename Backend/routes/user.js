@@ -2,8 +2,29 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
 const Users = require('../models/User');
-const User = require('../models/User');
+
+// require to upload files
+const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
+express().set("view engine", 'ejs');
+
+// seting foldername and filename
+const storage = multer.diskStorage({
+    destination: (req, file, cb) =>{
+        cb(null, 'uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.filename + '-' + Date.now())
+    }
+});
+const upload = multer({storage: storage});
+
+
+
+
 
 router.get('/', (req, res) => {
     res.send('this is user');
@@ -11,11 +32,11 @@ router.get('/', (req, res) => {
 
 // To Add User
 
-router.post('/adduser', [
+router.post('/adduser', upload.single('profileImg') , [
     body('username', 'Enter a valid name').isLength({ min: 3 }),
     body('email', "Enter a valid Email").isEmail(),
     body('password', 'Password must have a minimum of 5 characters').isLength({ min: 5 })
-], async (req, res) => {
+], async (req, res, next) => {
 
     let success = false;
     const error = validationResult(req);
@@ -34,24 +55,39 @@ router.post('/adduser', [
             return res.status(400).json({ success, error: "This email is already in use! Try login" })
         }
 
-        const { username, email, password } = req.body;
+        const { username, email, password, profileImg } = req.body;
+        console.log(profileImg)
 
         const salt = bcrypt.genSaltSync(10);
         const secPass = await bcrypt.hash(password, salt);
         const user = await Users.create({
             username: username,
             email: email,
-            password: secPass
+            password: secPass,
+            // profileImg: {
+            //     data: fs.readFileSync(path.join(__dirname + '/uploads/' + profileImg)),
+            //     contentType: 'image/png'
+            // }
         })
 
         const saveUser = await user.save();
-        res.send(saveUser)
-        console.log(saveUser)
+        const data = {
+            user: {
+                id: user.id,
+            }
+        }
+        const authToken = jwt.sign(data, process.env.JWT_SECRET)
+        success = true;
+
+        res.send({authToken, success})
+        console.log(authToken)
     } catch (error) {
         console.log(error.message);
         res.status(500).send("Internal Server Error");
     }
 })
+
+//Edit user
 router.put('/edituser/:id', [
     body('username', 'Enter a valid name').isLength({ min: 3 }),
     body('email', "Enter a valid Email").isEmail(),
@@ -90,7 +126,8 @@ router.put('/edituser/:id', [
         })
 
         const saveUser = await user.save();
-        res.send(saveUser)
+        success = true;
+        res.send({saveUser, success})
         console.log(saveUser)
     } catch (error) {
         console.log(error.message);
@@ -98,7 +135,7 @@ router.put('/edituser/:id', [
     }
 })
 
-
+// Delete User
 router.delete('/deleteuser/:id', async (req, res) => {
 
     let success = false;
@@ -107,12 +144,53 @@ router.delete('/deleteuser/:id', async (req, res) => {
         const user = await Users.findByIdAndDelete( req.params.id)
 
         const saveUser = await user.save();
-        res.send(saveUser)
+        if(saveUser){
+            res.status(200).send()
+        }
+        success = true;
+        res.send({saveUser, success})
         console.log(saveUser)
     } catch (error) {
         console.log(error.message);
         res.status(500).send("Internal Server Error");
     }
 })
+
+router.post('/login',[
+    body('email', "Enter a valid Email").isEmail(),
+    body('password', 'Password must have a minimum of 5 characters').isLength({ min: 5 }),
+], async(req, res) =>{
+
+    let success = false;
+    const error = validationResult(req);
+    if (!error.isEmpty()) {
+        res.status(400).json({ success, error: error.array() });
+    }
+    try {
+        const {email, password } = req.body;
+        const user = await Users.findOne({email})
+        if(!user){
+            return res.status(400).json({ success, error: "Please try to login with correct credentials" })
+        }
+
+        const passCompare = bcrypt.compare(password, user.password)
+        if(!passCompare){
+            return res.status(400).json({ success, error: "Please try to login with correct credentials" })
+        }
+
+        const data = {
+            user: {
+                id: user.id
+            }
+        }
+
+        const authToken = jwt.sign(data, process.env.JWT_SECRET);
+        success = true;
+        res.json({ success, authToken })
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+} )
 
 module.exports = router
