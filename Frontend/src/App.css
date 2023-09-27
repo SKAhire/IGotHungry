@@ -4,12 +4,15 @@
   --purpel: #A437DB;
   --purpel_light: #BB84E8;
   --head_font: 'Chewy', cursive;
+  --body_font: 'Cairo';
+  --white_bg: #f6f6f6;
 }
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--body_font);
 }
 
 
@@ -18,32 +21,41 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: black;
+  background: var(--white_bg);
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
-.navIcon{
+/* .navIcon{
   width: 10%;
-  margin: 10px 60px;
-}
+  margin: 20px 60px 0px 60px;
+} */
 
-.navIcon img{
-  height: 45px;
+img{
+  height: 85px;
+
 }
 
 .navMenu{
-  width: 20%;
-  margin: 10px 60px;
+  width: 100%;
 }
-.navMenu ul{
+.navMenu{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
+  margin: 5px 60px;
 }
 .navMenu a{
   font-family: var(--head_font);
   text-decoration: none;
   color: var(--purpel_light);
+  margin: 0px 10px;
+  font-size: large;
 }
+.logoImg{
+  margin: 0px 160px !important;
+}
+
 .navMenu a:hover{
   color: var(--purpel);
 }
