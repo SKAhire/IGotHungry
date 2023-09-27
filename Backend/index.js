@@ -1,4 +1,5 @@
 const express = require('express')
+var cors = require('cors') 
 const app = express();
 
 //Connection to db
@@ -8,6 +9,7 @@ connectToMongo();
 
 //middleware to show res body
 app.use(express.json())
+app.use(cors())
 
 //routes
 app.use('/user', require('./routes/user'))

@@ -3,10 +3,20 @@ const router = express.Router();
 const Recipes = require('../models/Recipes');
 const { header } = require('express-validator');
 
-router.get('/', (req, res) => {
-    res.send("this is recipes");
+
+//fetch recipes
+router.get('/', async(req, res) => {
+    try {
+        const recipes = await Recipes.find();
+        res.json(recipes)
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
 });
 
+
+//Add recipes
 router.post('/addrecipies', async (req, res, next) => {
 
     let success = false
@@ -43,6 +53,9 @@ router.post('/addrecipies', async (req, res, next) => {
     }
 
 });
+
+
+//edit recipes
 router.put('/editrecipies/:id', async (req, res) => {
     let success = false
 
@@ -81,6 +94,9 @@ router.put('/editrecipies/:id', async (req, res) => {
     }
 
 });
+
+
+//delete recipes
 
 router.delete('/deleterecipes/:id', async (req, res) => {
 
