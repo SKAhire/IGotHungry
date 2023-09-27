@@ -1,13 +1,14 @@
 import React from 'react'
+import Slider from './Slider'
 
 const Home = () => {
   return (
     <>
-    
-    <main>
-        <h1>this is main </h1>
-    </main>
-    
+
+      <main>
+        <Slider />
+      </main>
+
     </>
   )
 }
