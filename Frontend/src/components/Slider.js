@@ -16,8 +16,8 @@ const Slider = () => {
                     <div className="sliderDiv">
                     </div>
                     <div className="slideInfo">
-                        <div>SIMPLE RECIPES MADE FOR
-                            real, actual, everyday life.</div>
+                        <p>SIMPLE RECIPES MADE FOR
+                            real, actual, everyday life.</p>
                         <a href="/">All Recipies</a>
                     </div>
                 </div>
@@ -27,7 +27,7 @@ const Slider = () => {
                     <div className="sliderDiv">
                     </div>
                     <div className="slideInfo">
-                    <div>We’ve organized these recipes every way we could think of so you don't have to! <br />no matter how you browse, we’re sure you’ll find just what you were looking for</div>
+                    <p>We’ve organized these recipes every way we could think of so you don't have to! <br />no matter how you browse, we’re sure you’ll find just what you were looking for</p>
                         <a href="/">All Recipies</a>
                     </div>
                     
@@ -38,7 +38,7 @@ const Slider = () => {
                     <div className="sliderDiv">
                     </div>
                     <div className="slideInfo">
-                    <div>Out of all the many recipes on Pinch of Yum, these are our shining stars - <br />the recipes we come back to again and again (and again).</div>
+                    <p>Out of all the many recipes on I Got Hungry, these are our shining stars - <br />the recipes we come back to again and again (and again).</p>
                         <a href="/">All Recipies</a>
                     </div>
                     

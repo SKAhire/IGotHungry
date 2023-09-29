@@ -1,5 +1,6 @@
 import React from 'react'
 import Slider from './Slider'
+import HomeMain from './HomeMain'
 
 const Home = () => {
   return (
@@ -7,6 +8,7 @@ const Home = () => {
 
       <main>
         <Slider />
+        <HomeMain/>
       </main>
 
     </>
