@@ -1,4 +1,5 @@
 import React from 'react';
+
 const HomeMain = () => {
     return (
         <>
@@ -14,34 +15,37 @@ const HomeMain = () => {
                         <p>Here are some of the most poplular from I Got Hungry</p>
                     </div>
                     <div className='popCardCont'>
-                       <a href="/">
-                       <div className="popCard" style={{backgroundImage: `url("../popImage/sample1.jpg")`}}>
-                            <div className="cardInfo">
-                                <p>Vegitarian</p>
+                        <a href="/">
+                            <div className="popCard" style={{ backgroundImage: `url("../popImage/sample1.jpg")` }}>
+                                <div className="cardInfo">
+                                    <p>Vegitarian</p>
+                                </div>
                             </div>
-                        </div>
-                       </a>
-                       <a href="/">
-                       <div className="popCard" style={{backgroundImage: `url("../popImage/sample2.jpg")`}}>
-                            <div className="cardInfo">
-                                <p>Healty</p>
+                        </a>
+                        <a href="/">
+                            <div className="popCard" style={{ backgroundImage: `url("../popImage/sample2.jpg")` }}>
+                                <div className="cardInfo">
+                                    <p>Healty</p>
+                                </div>
                             </div>
-                        </div>
-                       </a>
-                       <a href="/">
-                       <div className="popCard" style={{backgroundImage: `url("../popImage/sample3.jpg")`}}>
-                            <div className="cardInfo">
-                                <p>Soup</p>
+                        </a>
+                        <a href="/">
+                            <div className="popCard" style={{ backgroundImage: `url("../popImage/sample3.jpg")` }}>
+                                <div className="cardInfo">
+                                    <p>Soup</p>
+                                </div>
                             </div>
-                        </div>
-                       </a>
-                       <a href="/">
-                       <div className="popCard" style={{backgroundImage: `url("../popImage/sample4.jpg")`}}>
-                            <div className="cardInfo">
-                                <p>Quick</p>
+                        </a>
+                        <a href="/">
+                            <div className="popCard" style={{ backgroundImage: `url("../popImage/sample4.jpg")` }}>
+                                <div className="cardInfo">
+                                    <p>Quick</p>
+                                </div>
                             </div>
-                        </div>
-                       </a>
+                        </a>
+                    </div>
+                    <div className="viewAll">
+                        <a href="/">All Recipies</a>
                     </div>
                 </div>
 
