@@ -8,8 +8,14 @@ const HomeMain = () => {
             <section className="Categories">
                 <Categories />
             </section>
+            <section>
+                about section
+            </section>
             <section className="recipies">
                 <Recipes />
+            </section>
+            <section>
+                submit section
             </section>
 
         </>

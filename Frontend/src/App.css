@@ -78,7 +78,7 @@ body {
   font-family: var(--head_font);
   text-decoration: none;
   /* color: var(--purpel_light); */
-  color: var(--purpel_light);
+  color: var(--purpel);
   margin: 0px 10px;
   font-size: large;
 }
@@ -96,7 +96,7 @@ body {
   height: 60px;
 }
 .navMenu a:hover {
-  color: var(--purpel);
+  color: var(--purpel_light);
 }
 
 
@@ -326,4 +326,42 @@ body {
 }
 .owl-item{
   width: 360px !important;
+}
+
+/* latest recipes */
+.latestRes{
+  padding: 60px 12px;
+  margin: 10px 100px;
+}
+.latestList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.latestInfo{
+  display: flex;
+  margin-right: 10px;
+  width: 49%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.latestInfo:hover{
+  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
+}
+.latestInfo img{
+  margin: 10px;
+  height: 200px;
+  width: 200px;
+}
+.latestInfo h4{
+  font-family: var(--head_font);
+  color: var(--purpel);
+  font-size: larger;
+}
+.latestInfo a:hover, h4:hover{
+  color: var(--purpel_light);
+}
+.latestInfo a{
+  font-family: var(--head_font);
+  color: var(--purpel);
 }

@@ -14,7 +14,7 @@ const Recipes = () => {
                     <h2>Popular Recipes</h2>
                     <p>Here are some of the most poplular recipes from I Got Hungry</p>
                 </div>
-                <OwlCarousel className='owl-theme' loop margin={10} stagePadding={10} dots={false} nav={false} center={true}>
+                <OwlCarousel className='owl-theme' loop margin={10} stagePadding={10} dots={true} nav={false} center={true}>
 
                     <div class='item'>
                         <a href="/">
@@ -129,12 +129,73 @@ const Recipes = () => {
 
 
             </div>
+
             <div className="latestRes">
-                <div className="latestInfo">
-                    
+                <div className="popHead">
+                    <span>
+                        <em></em>
+                    </span>
+                    <h2>Latest Recipes</h2>
+                    <p>Here are the latest recipes from I Got Hungry</p>
+                </div>
+                <div className="latestList">
+                    <div className="latestInfo">
+                        <img src="https://pinchofyum.com/cdn-cgi/image/width=360,height=360,fit=crop/wp-content/uploads/Chimichurri-Shrimp-4.jpg" alt="" />
+                        <div className="latestIditals">
+                            <p className="latestDate">
+                                OCTOBER 2, 2023
+                            </p>
+                            <a href="/"><h4>Chimichurri Shrimp with Tomatoes</h4></a>
+                            <p className="latestSum">
+                                Saucy, punchy, and delightful Chimichurri Shrimp! Served with a tomato salad, a pile of hot steamy rice, and a dollop of creamy tzatziki.
+                            </p>
+                            <a href="/">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div className="latestInfo">
+                        <img src="https://pinchofyum.com/cdn-cgi/image/width=360,height=360,fit=crop/wp-content/uploads/Chimichurri-Shrimp-4.jpg" alt="" />
+                        <div className="latestIditals">
+                            <p className="latestDate">
+                                OCTOBER 2, 2023
+                            </p>
+                            <a href="/"><h4>Chimichurri Shrimp with Tomatoes</h4></a>
+                            <p className="latestSum">
+                                Saucy, punchy, and delightful Chimichurri Shrimp! Served with a tomato salad, a pile of hot steamy rice, and a dollop of creamy tzatziki.
+                            </p>
+                            <a href="/">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div className="latestInfo">
+                        <img src="https://pinchofyum.com/wp-content/uploads/Creamy-Baked-Orzo-Square-300x300.png" alt="" />
+                        <div className="latestIditals">
+                            <p className="latestDate">
+                                OCTOBER 2, 2023
+                            </p>
+                            <a href="/"><h4>Chimichurri Shrimp with Tomatoes</h4></a>
+                            <p className="latestSum">
+                                Saucy, punchy, and delightful Chimichurri Shrimp! Served with a tomato salad, a pile of hot steamy rice, and a dollop of creamy tzatziki.
+                            </p>
+                            <a href="/">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div className="latestInfo">
+                        <img src="https://pinchofyum.com/wp-content/uploads/Creamy-Baked-Orzo-Square-300x300.png" alt="" />
+                        <div className="latestIditals">
+                            <p className="latestDate">
+                                OCTOBER 2, 2023
+                            </p>
+                            <a href="/"><h4>Chimichurri Shrimp with Tomatoes</h4></a>
+                            <p className="latestSum">
+                                Saucy, punchy, and delightful Chimichurri Shrimp! Served with a tomato salad, a pile of hot steamy rice, and a dollop of creamy tzatziki.
+                            </p>
+                            <a href="/">Continue Reading</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            <div className="viewAll">
+                <a href="/">All Recipies</a>
+            </div>
         </>
     )
 }
