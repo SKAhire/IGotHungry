@@ -15,6 +15,9 @@
   box-sizing: border-box;
   font-family: var(--body_font);
 }
+a{
+  text-decoration: none;
+}
 
 body {
   position: relative;
@@ -216,9 +219,9 @@ body {
 }
 
 .cardInfo:hover {
-  background-color: rgba(0, 0, 0, 0.456);
   height: 350px;
   width: 255px;
+  background-color: rgba(0, 0, 0, 0.456);
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -290,4 +293,37 @@ body {
   font-family: var(--head_font);
   font-size: large;
   text-align: center;
+}
+
+/* Recipes */
+.poprecipies{
+  padding: 60px 12px;
+  margin: 10px 100px;
+}
+.recipesCard{
+  height: 200px;
+  width: 350px;
+  transition: transform .5s ;
+}
+.recipesCard:hover{
+  transform: scale(1.01);
+}
+.recipeInfo{
+  height: 200px;
+  width: 350px;
+  transition: transform .5s ;
+}
+.recipeInfo:hover{
+  background-color: rgba(0, 0, 0, 0.456);
+  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
+  transform: scale(1.01);
+}
+.recipeInfo h6{
+  background-color: var(--purpel);
+  font: 20px var(--head_font) ;
+  color:  var(--white_bg);
+  padding: 5px;
+}
+.owl-item{
+  width: 360px !important;
 }
