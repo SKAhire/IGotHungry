@@ -30,7 +30,7 @@ body {
   background: transparent;
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   width: 100%;
 }
 .cnavContainer {
@@ -41,7 +41,7 @@ body {
   background: var(--white_bg);
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   width: 100%;
 }
 
@@ -151,10 +151,16 @@ body {
 }
 
 
+/* Categories */
+
+.Categories{
+  background: var(--white_bg);
+}
+
 /* pop container */
 .popContainer {
   padding: 60px 12px;
-  margin: 10px 120px;
+  margin: 10px 100px;
 }
 
 .popHead {
@@ -181,6 +187,7 @@ body {
   font-family: var(--head_font);
   font-size: 34px;
   margin-top: 20px;
+  color: var(--purpel);
 }
 
 .popHead p {
@@ -234,8 +241,8 @@ body {
 
 .viewAll{
   text-align: center;
-  margin: 30px;
-  padding: 20px;
+  /* margin: 30px; */
+  padding-bottom: 50px;
 }
 .viewAll a{
   text-decoration: none;
@@ -250,4 +257,37 @@ body {
   background: var(--white_bg);
   color: var(--purpel_light);
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* all Categories */
+.allCat {
+  padding: 60px 12px;
+  margin: 10px 100px;
+}
+.allCat a{
+  text-decoration: none;
+  color: var(--purpel);
+}
+
+.allCatCont{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  background: var(--white_bg);
+}
+.allCatElement img{
+  border: none;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  transition: transform .5s ease-in;
+}
+.allCatElement img:hover{
+  transform: scale(1.1);
+}
+.allCatElement p{
+  font-family: var(--head_font);
+  font-size: large;
+  text-align: center;
 }
