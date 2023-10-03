@@ -16,7 +16,7 @@ const Recipes = () => {
                 </div>
                 <OwlCarousel className='owl-theme' loop margin={10} stagePadding={10} dots={true} nav={false} center={true}>
 
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample4.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -25,7 +25,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample3.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -34,7 +34,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample2.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -43,7 +43,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample1.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -52,7 +52,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample4.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -61,7 +61,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample3.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -70,7 +70,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample2.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -79,7 +79,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample1.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -88,7 +88,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample4.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -97,7 +97,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample3.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -106,7 +106,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ background: `url("../images/popImage/sample2.jpg") center center` }}>
                                 <div className="recipeInfo">
@@ -115,7 +115,7 @@ const Recipes = () => {
                             </div>
                         </a>
                     </div>
-                    <div class='item'>
+                    <div className='item'>
                         <a href="/">
                             <div className="recipesCard" style={{ backgroundImage: `url("../images/popImage/sample1.jpg")` }}>
                                 <div className="recipeInfo">

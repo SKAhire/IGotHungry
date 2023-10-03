@@ -386,7 +386,7 @@ body {
   font-size: x-large;
   font-weight: normal;
 }
-.latestInfo a:hover, h4:hover{
+.latestInfo a:hover,.latestInfo h4:hover{
   color: var(--purpel_light);
 }
 .latestInfo a{
@@ -406,4 +406,53 @@ body {
 .homeSubmit p{
   margin-bottom: 20px;
   font-family: var(--body_font);
+}
+
+
+/* Footer */
+.footerMain{
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  /* margin-top: 20px; */
+  background: var(--white_bg);
+  padding: 60px 10px 10px;
+}
+.footerMain h4{
+  color: var(--purpel);
+  font-family: var(--head_font);
+  font-size: larger;
+  font-weight: normal;
+}
+.footerMain h4:hover{
+  color: var(--purpel_light);
+}
+.ighLogo img{
+  height: 200px;
+  width: 200px;
+}
+.footerLinks a{
+  display: block;
+  color: black;
+  font-family: var(--body_font);
+  font-weight: bold;
+}
+.footerLinks a:hover{
+  color: var(--purpel_light);
+}
+.ighSocial{
+  text-align: center;
+  background: var(--white_bg);
+  padding: 0px 10px;
+}
+.ighSocial a{
+  color: var(--purpel);
+  font-size: x-large;
+  /* padding: 5px; */
+  margin: 15px;
+}
+.ccSection{
+  text-align: center;
+  background: var(--purpel);
+  color: var(--white_bg);
 }
