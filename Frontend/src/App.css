@@ -1,5 +1,3 @@
-/* #A437DB */
-
 :root {
   --purpel: #A437DB;
   --purpel_light: #BB84E8;
@@ -29,6 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: row wrap;
   /* background: var(--white_bg); */
   background: transparent;
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
@@ -38,6 +37,7 @@ body {
 }
 .cnavContainer {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   /* background: var(--white_bg); */
@@ -102,6 +102,7 @@ body {
 
 
 /* main Slider */
+
 .default-nav {
   margin: 30px;
   background: none;
@@ -111,6 +112,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-flow: row wrap;
   background-size: cover;
   height: 95vh;
   /* opacity: .5; */
@@ -154,6 +156,8 @@ body {
 }
 
 
+/* Home page */
+
 /* Categories */
 
 .Categories{
@@ -161,6 +165,7 @@ body {
 }
 
 /* pop container */
+
 .popContainer {
   padding: 60px 12px;
   margin: 10px 100px;
@@ -202,6 +207,7 @@ body {
 /* popular card */
 .popCardCont {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
@@ -263,6 +269,7 @@ body {
 }
 
 /* all Categories */
+
 .allCat {
   padding: 60px 12px;
   margin: 10px 100px;
@@ -274,6 +281,7 @@ body {
 
 .allCatCont{
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
@@ -295,7 +303,23 @@ body {
   text-align: center;
 }
 
+/* About Home */
+.About{
+  background-size: 200px 100px;
+  padding: 15px 100px;
+}
+.homeAbout{
+  background: #f6f6f6d4 ;
+  padding: 10px 20px;
+  margin: 15px 100px;
+}
+.homeAbout p {
+  margin-bottom: 20px;
+  font-family: var(--body_font);
+}
+
 /* Recipes */
+
 .poprecipies{
   padding: 60px 12px;
   margin: 10px 100px;
@@ -353,10 +377,14 @@ body {
   height: 200px;
   width: 200px;
 }
+.latestIditals{
+  padding: 5px;
+}
 .latestInfo h4{
   font-family: var(--head_font);
   color: var(--purpel);
-  font-size: larger;
+  font-size: x-large;
+  font-weight: normal;
 }
 .latestInfo a:hover, h4:hover{
   color: var(--purpel_light);
@@ -364,4 +392,18 @@ body {
 .latestInfo a{
   font-family: var(--head_font);
   color: var(--purpel);
+}
+
+.Submit{
+  background-size: 200px 100px;
+  padding: 15px 100px;
+}
+.homeSubmit{
+  background: #f6f6f6d4 ;
+  padding: 10px 20px;
+  margin: 15px 100px;
+}
+.homeSubmit p{
+  margin-bottom: 20px;
+  font-family: var(--body_font);
 }
