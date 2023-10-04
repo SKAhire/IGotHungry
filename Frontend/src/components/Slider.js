@@ -4,9 +4,9 @@ import 'react-slideshow-image/dist/styles.css';
 
 const Slider = () => {
     const images = [
-        "http://www.ansonika.com/foogra/revolution-slider/assets/images/slide_3.jpg",
-        "http://www.ansonika.com/foogra/revolution-slider/assets/images/slide_2.jpg",
-        "http://www.ansonika.com/foogra/revolution-slider/assets/images/slide_1.jpg",
+        "../images/slider/slider_1.jpg",
+        "../images/slider/slider_2.jpg",
+        "../images/slider/slider_3.jpg",
     ];
 
     return (
@@ -27,7 +27,7 @@ const Slider = () => {
                     <div className="sliderDiv">
                     </div>
                     <div className="slideInfo">
-                    <p>We’ve organized these recipes every way we could think of so you don't have to! <br />no matter how you browse, we’re sure you’ll find just what you were looking for</p>
+                    <p>We’ve organized these recipes every way we could think of so you don't have to! <br />no matter how you browse, we’re sure you’ll find just what you were looking for.</p>
                         <a href="/">All Recipies</a>
                     </div>
                     

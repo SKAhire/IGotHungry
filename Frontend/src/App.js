@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
-import Recipes from './Recipes';
+import Recipes from './components/Recipes';
 import './App.css';
 import {
   BrowserRouter as Router,

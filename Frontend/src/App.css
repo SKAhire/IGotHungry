@@ -5,6 +5,7 @@
   --body_font: 'Cairo';
   --white_bg: #f6f6f6;
   --head_bg: #e1e1e1;
+  --white_t: #f6f6f6d4;
 }
 
 * {
@@ -128,12 +129,14 @@ body {
 
 .slideInfo {
   position: absolute;
+  background: var(--white_t);
+  padding: 15px;
 }
 
 .slideInfo p {
   padding: 20px;
   font-size: 20px;
-  color: var(--white_bg);
+  color: black;
   text-align: center;
 }
 
@@ -309,7 +312,7 @@ body {
   padding: 15px 100px;
 }
 .homeAbout{
-  background: #f6f6f6d4 ;
+  background: var(--white_t);
   padding: 10px 20px;
   margin: 15px 100px;
 }
@@ -399,7 +402,7 @@ body {
   padding: 15px 100px;
 }
 .homeSubmit{
-  background: #f6f6f6d4 ;
+  background: var(--white_t) ;
   padding: 10px 20px;
   margin: 15px 100px;
 }
@@ -455,4 +458,64 @@ body {
   text-align: center;
   background: var(--purpel);
   color: var(--white_bg);
+}
+
+/* Recipes */
+
+.Banner{
+  text-align: center;
+  height: 40vh;
+}
+.bannerDiv{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.5;
+  padding: 100px;
+}
+.bannerInfo{
+  position: absolute;
+  background: var(--white_t);
+  padding: 10px 20px;
+  top: 15vh;
+  left: 14vw;
+}
+.Banner h1{
+  font-family: var(--head_font);
+  color: var(--purpel);
+  font-size: xx-large;
+  font-weight: normal;
+}
+.path a{
+  color: black;
+}
+.path a:hover{
+  text-decoration: underline;
+  color: var(--purpel);
+}
+.recCont{
+  padding: 60px 12px;
+  margin: 10px 100px;
+}
+.recList{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  text-align: center;
+}
+.recInfo{
+  margin-top: 10px;
+  width: 24%;
+}
+.recInfo:hover{
+  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
+}
+.recInfo img{
+  height: 300px;
+  width: 300px;
+}
+.recInfo h2{
+  word-wrap: normal;
 }
