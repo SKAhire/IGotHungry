@@ -1,6 +1,8 @@
 import React from 'react';
 import Categories from './Categories';
-import Recipes from './Recipes';
+import HomeRecipes from './HomeRecipes';
+import { Link } from 'react-router-dom';
+
 const HomeMain = () => {
     return (
         <>
@@ -22,13 +24,13 @@ const HomeMain = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aspernatur laboriosam voluptate incidunt explicabo rem doloribus asperiores sequi ratione numquam nobis reprehenderit praesentium maxime suscipit iure magni alias ut dicta error quasi quia, eos, exercitationem omnis molestias. Magni explicabo sunt illo, ipsam cupiditate veritatis vel quibusdam consequuntur officiis deserunt repellendus.
                     </p>
                     <div className="viewAll">
-                        <a href="/">Read More</a>
+                        <Link to="/">Read More</Link>
                     </div>
                 </div>
             </section>
 
-            <section className="recipies">
-                <Recipes />
+            <section className="HomeRecipes">
+                <HomeRecipes />
             </section>
             <section className='Submit' style={{ background: `url("../images/bg5.jpg") center no-repeat` }}>
             <div className="homeSubmit">
@@ -43,7 +45,7 @@ const HomeMain = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aspernatur laboriosam voluptate incidunt explicabo rem doloribus asperiores sequi ratione numquam nobis reprehenderit praesentium maxime suscipit iure magni alias ut dicta error quasi quia, eos, exercitationem omnis molestias. Magni explicabo sunt illo, ipsam cupiditate veritatis vel quibusdam consequuntur officiis deserunt repellendus.
                     </p>
                     <div className="viewAll">
-                        <a href="/">Submit</a>
+                        <Link to="/">Submit</Link>
                     </div>
                 </div>
             </section>

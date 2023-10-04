@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     let scrollImg = '..\\logo\\logo_white.png'
@@ -18,17 +19,17 @@ const Navbar = () => {
             <header className="navbar">
                 <div className={`${scrollTop.navContainer}`}>
                     {/* <div className="navIcon">
-                        <a href="/"><img src="..\logo\logo_line.png" alt="IGotHungry" /></a>
+                        <Link to="/"><img src="..\logo\logo_line.png" alt="IGotHungry" /></Link>
                     </div> */}
                     <div className="navMenu">
 
-                           <a href="/">Home</a>
-                            <a href="/">Recipes</a>
-                            <a href="/">Start Here</a>
-                            <a href="/" className={`${scrollTop.imgClass}`}><img src={`${scrollTop.scrollImg}`} alt="IGotHungry" /></a>
-                           <a href="/">About</a>
-                           <a href="/">Submit</a>
-                           <a href="/">Contact</a>
+                           <Link to="/">Home</Link>
+                            <Link to="/recipes">Recipes</Link>
+                            <Link to="/">Start Here</Link>
+                            <Link to="/" className={`${scrollTop.imgClass}`}><img src={`${scrollTop.scrollImg}`} alt="IGotHungry" /></Link>
+                           <Link to="/">About</Link>
+                           <Link to="/">Submit</Link>
+                           <Link to="/">Contact</Link>
                     </div>
                 </div>
             </header>

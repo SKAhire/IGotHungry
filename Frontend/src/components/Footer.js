@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -7,13 +8,13 @@ const Footer = () => {
       <footer>
         <div className="footerMain">
           <div className="ighMenu">
-            <a href="/"><h4>I Got Hungry</h4></a>
+            <Link to="/"><h4>I Got Hungry</h4></Link>
             <div className="footerLinks">
-              <a href="/">Recipes</a>
-              <a href="/">Start Here</a>
-              <a href="/">About</a>
-              <a href="/">Submit</a>
-              <a href="/">Contact</a>
+              <Link to="/">Recipes</Link>
+              <Link to="/">Start Here</Link>
+              <Link to="/">About</Link>
+              <Link to="/">Submit</Link>
+              <Link to="/">Contact</Link>
             </div>
           </div>
 
@@ -22,13 +23,13 @@ const Footer = () => {
           </div>
 
           <div className="ighCat">
-            <a href="/"><h4>Categories</h4></a>
+            <Link to="/"><h4>Categories</h4></Link>
             <div className="footerLinks">
-              <a href="/">Vegitarian</a>
-              <a href="/">Healty</a>
-              <a href="/">Soup</a>
-              <a href="/">Quick</a>
-              <a href="/">View All</a>
+              <Link to="/">Vegitarian</Link>
+              <Link to="/">Healty</Link>
+              <Link to="/">Soup</Link>
+              <Link to="/">Quick</Link>
+              <Link to="/">View All</Link>
             </div>
           </div>
 
@@ -36,10 +37,10 @@ const Footer = () => {
         </div>
         
         <div className="ighSocial">
-          <a href="/"><i className="fa-brands fa-facebook-f"></i></a>
-          <a href="/"><i className="fa-brands fa-instagram"></i></a>
-          <a href="/"><i className="fa-brands fa-pinterest"></i></a>
-          <a href="https://github.com/SKAhire"><i className="fa-brands fa-github"></i></a>
+          <Link to="/"><i className="fa-brands fa-facebook-f"></i></Link>
+          <Link to="/"><i className="fa-brands fa-instagram"></i></Link>
+          <Link to="/"><i className="fa-brands fa-pinterest"></i></Link>
+          <Link to="https://github.com/SKAhire"><i className="fa-brands fa-github"></i></Link>
         </div>
 
         <div className="ccSection">
