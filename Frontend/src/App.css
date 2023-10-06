@@ -253,7 +253,7 @@ body {
 
 .viewAll{
   text-align: center;
-  /* margin: 30px; */
+  margin: 30px;
   padding-bottom: 50px;
 }
 .viewAll a{
@@ -480,6 +480,7 @@ body {
   padding: 10px 20px;
   top: 15vh;
   left: 14vw;
+  width: 72vw;
 }
 .Banner h1{
   font-family: var(--head_font);
@@ -518,4 +519,32 @@ body {
 }
 .recInfo h2{
   word-wrap: normal;
+}
+
+/* recipe description */
+.recipeDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 12px;
+  margin: 10px 100px;
+}
+
+.recipeBody{
+  width: 60%;
+}
+.recipeBody h2{
+  font-family: var(--head_font);
+  font-weight: normal;
+  color: var(--purpel);
+  font-size: xx-large;
+}
+.recipeBody p{
+  font: large var(--body_font);
+}
+.recipeBody img{
+  width: 95%;
+}
+.relatedres{
+  width: 38%;
 }
