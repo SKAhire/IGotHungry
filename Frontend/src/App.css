@@ -548,3 +548,18 @@ body {
 .relatedres{
   width: 38%;
 }
+.stepBody{
+  margin: 20px 10px;
+}
+.stepBody h3{
+  color: var(--purpel_light);
+  font-family: var(--head_font);
+  font-weight: normal;
+}
+.mainInfo{
+  
+}
+.mainInfo img{
+  height: 183px;
+  width: 183px;
+}
