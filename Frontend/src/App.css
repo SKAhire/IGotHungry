@@ -14,7 +14,8 @@
   box-sizing: border-box;
   font-family: var(--body_font);
 }
-a{
+
+a {
   text-decoration: none;
 }
 
@@ -36,6 +37,7 @@ body {
   z-index: 100;
   width: 100%;
 }
+
 .cnavContainer {
   display: flex;
   flex-flow: row wrap;
@@ -75,6 +77,7 @@ body {
   margin: 0px 10px;
   font-size: large;
 }
+
 .cnavContainer a {
   font-family: var(--head_font);
   text-decoration: none;
@@ -87,15 +90,19 @@ body {
 .logoImg {
   margin: 0px 160px !important;
 }
+
 .logoImg img {
   height: 85px;
 }
+
 .clogoImg {
   margin: 0px 130px !important;
 }
+
 .clogoImg img {
   height: 60px;
 }
+
 .navMenu a:hover {
   color: var(--purpel_light);
 }
@@ -163,7 +170,7 @@ body {
 
 /* Categories */
 
-.Categories{
+.Categories {
   background: var(--white_bg);
 }
 
@@ -217,7 +224,7 @@ body {
 }
 
 .popCard {
-  
+
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -251,12 +258,13 @@ body {
   margin: 150px 35px;
 }
 
-.viewAll{
+.viewAll {
   text-align: center;
   margin: 30px;
   padding-bottom: 50px;
 }
-.viewAll a{
+
+.viewAll a {
   text-decoration: none;
   color: var(--white_bg);
   background: var(--purpel);
@@ -265,7 +273,8 @@ body {
   font-family: var(--head_font);
   font-size: x-large;
 }
-.viewAll a:hover{
+
+.viewAll a:hover {
   background: var(--white_bg);
   color: var(--purpel_light);
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
@@ -277,12 +286,13 @@ body {
   padding: 60px 12px;
   margin: 10px 100px;
 }
-.allCat a{
+
+.allCat a {
   text-decoration: none;
   color: var(--purpel);
 }
 
-.allCatCont{
+.allCatCont {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -290,32 +300,37 @@ body {
   margin-top: 20px;
   background: var(--white_bg);
 }
-.allCatElement img{
+
+.allCatElement img {
   border: none;
   height: 100px;
   width: 100px;
   border-radius: 50%;
   transition: transform .5s ease-in;
 }
-.allCatElement img:hover{
+
+.allCatElement img:hover {
   transform: scale(1.1);
 }
-.allCatElement p{
+
+.allCatElement p {
   font-family: var(--head_font);
   font-size: large;
   text-align: center;
 }
 
 /* About Home */
-.About{
+.About {
   background-size: 200px 100px;
   padding: 15px 100px;
 }
-.homeAbout{
+
+.homeAbout {
   background: var(--white_t);
   padding: 10px 20px;
   margin: 15px 100px;
 }
+
 .homeAbout p {
   margin-bottom: 20px;
   font-family: var(--body_font);
@@ -323,97 +338,114 @@ body {
 
 /* Recipes */
 
-.poprecipies{
+.poprecipies {
   padding: 60px 12px;
   margin: 10px 100px;
 }
-.recipesCard{
+
+.recipesCard {
   height: 200px;
   width: 350px;
-  transition: transform .5s ;
+  transition: transform .5s;
 }
-.recipesCard:hover{
+
+.recipesCard:hover {
   transform: scale(1.01);
 }
-.recipeInfo{
+
+.recipeInfo {
   height: 200px;
   width: 350px;
-  transition: transform .5s ;
+  transition: transform .5s;
 }
-.recipeInfo:hover{
+
+.recipeInfo:hover {
   background-color: rgba(0, 0, 0, 0.456);
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
   transform: scale(1.01);
 }
-.recipeInfo h6{
+
+.recipeInfo h6 {
   background-color: var(--purpel);
-  font: 20px var(--head_font) ;
-  color:  var(--white_bg);
+  font: 20px var(--head_font);
+  color: var(--white_bg);
   padding: 5px;
 }
-.owl-item{
+
+.owl-item {
   width: 360px !important;
 }
 
 /* latest recipes */
-.latestRes{
+.latestRes {
   padding: 60px 12px;
   margin: 10px 100px;
 }
-.latestList{
+
+.latestList {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
 }
-.latestInfo{
+
+.latestInfo {
   display: flex;
   margin-right: 10px;
   width: 49%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
-.latestInfo:hover{
+
+.latestInfo:hover {
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
 }
-.latestInfo img{
+
+.latestInfo img {
   margin: 10px;
   height: 200px;
   width: 200px;
 }
-.latestIditals{
+
+.latestIditals {
   padding: 5px;
 }
-.latestInfo h4{
+
+.latestInfo h4 {
   font-family: var(--head_font);
   color: var(--purpel);
   font-size: x-large;
   font-weight: normal;
 }
-.latestInfo a:hover,.latestInfo h4:hover{
+
+.latestInfo a:hover,
+.latestInfo h4:hover {
   color: var(--purpel_light);
 }
-.latestInfo a{
+
+.latestInfo a {
   font-family: var(--head_font);
   color: var(--purpel);
 }
 
-.Submit{
+.Submit {
   background-size: 200px 100px;
   padding: 15px 100px;
 }
-.homeSubmit{
-  background: var(--white_t) ;
+
+.homeSubmit {
+  background: var(--white_t);
   padding: 10px 20px;
   margin: 15px 100px;
 }
-.homeSubmit p{
+
+.homeSubmit p {
   margin-bottom: 20px;
   font-family: var(--body_font);
 }
 
 
 /* Footer */
-.footerMain{
+.footerMain {
   display: flex;
   justify-content: space-around;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
@@ -421,40 +453,48 @@ body {
   background: var(--white_bg);
   padding: 60px 10px 10px;
 }
-.footerMain h4{
+
+.footerMain h4 {
   color: var(--purpel);
   font-family: var(--head_font);
   font-size: larger;
   font-weight: normal;
 }
-.footerMain h4:hover{
+
+.footerMain h4:hover {
   color: var(--purpel_light);
 }
-.ighLogo img{
+
+.ighLogo img {
   height: 200px;
   width: 200px;
 }
-.footerLinks a{
+
+.footerLinks a {
   display: block;
   color: black;
   font-family: var(--body_font);
   font-weight: bold;
 }
-.footerLinks a:hover{
+
+.footerLinks a:hover {
   color: var(--purpel_light);
 }
-.ighSocial{
+
+.ighSocial {
   text-align: center;
   background: var(--white_bg);
   padding: 0px 10px;
 }
-.ighSocial a{
+
+.ighSocial a {
   color: var(--purpel);
   font-size: x-large;
   /* padding: 5px; */
   margin: 15px;
 }
-.ccSection{
+
+.ccSection {
   text-align: center;
   background: var(--purpel);
   color: var(--white_bg);
@@ -462,11 +502,12 @@ body {
 
 /* Recipes */
 
-.Banner{
+.Banner {
   text-align: center;
   height: 40vh;
 }
-.bannerDiv{
+
+.bannerDiv {
   position: relative;
   height: 100%;
   width: 100%;
@@ -474,7 +515,8 @@ body {
   opacity: 0.5;
   padding: 100px;
 }
-.bannerInfo{
+
+.bannerInfo {
   position: absolute;
   background: var(--white_t);
   padding: 10px 20px;
@@ -482,47 +524,56 @@ body {
   left: 14vw;
   width: 72vw;
 }
-.Banner h1{
+
+.Banner h1 {
   font-family: var(--head_font);
   color: var(--purpel);
   font-size: xx-large;
   font-weight: normal;
 }
-.path a{
+
+.path a {
   color: black;
 }
-.path a:hover{
+
+.path a:hover {
   text-decoration: underline;
   color: var(--purpel);
 }
-.recCont{
+
+.recCont {
   padding: 60px 12px;
   margin: 10px 100px;
 }
-.recList{
+
+.recList {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row wrap;
   text-align: center;
 }
-.recInfo{
+
+.recInfo {
   margin-top: 10px;
   width: 24%;
 }
-.recInfo:hover{
+
+.recInfo:hover {
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
 }
-.recInfo img{
+
+.recInfo img {
   height: 300px;
   width: 300px;
 }
-.recInfo h2{
+
+.recInfo h2 {
   word-wrap: normal;
 }
 
 /* recipe description */
-.recipeDiv{
+.recipeDiv {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -530,44 +581,52 @@ body {
   margin: 10px 100px;
 }
 
-.recipeBody{
+.recipeBody {
   width: 60%;
 }
-.recipeBody h2{
+
+.recipeBody h2 {
   font-family: var(--head_font);
   font-weight: normal;
   color: var(--purpel);
   font-size: xx-large;
 }
-.recipeBody p{
+
+.recipeBody p {
   font: large var(--body_font);
 }
-.recipeBody img{
+
+.recipeBody img {
   width: 95%;
 }
-.relatedres{
+
+.relatedres {
   width: 38%;
 }
-.stepBody{
+
+.stepBody {
   margin: 20px 10px;
 }
-.stepBody h3{
+
+.stepBody h3 {
   color: var(--purpel_light);
   font-family: var(--head_font);
   font-weight: normal;
 }
-.mainInfo{
+
+.mainInfo {
   background: var(--purpel);
   text-align: center;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
 
-.mainInfo h2{
+.mainInfo h2 {
   color: var(--white_bg);
   text-decoration: underline;
 }
-.mainInfo img{
+
+.mainInfo img {
   border: 3px solid var(--purpel_light);
   padding: 3px;
   margin-top: 10px;
@@ -575,32 +634,161 @@ body {
   height: 183px;
   width: 183px;
 }
-.mainInfo ul{
+
+.mainInfo ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
   list-style-type: none;
 }
-.mainInfo li{
+
+.mainInfo li {
   /* padding: 0px 5px; */
   color: var(--white_bg);
 }
-.mainInfo li span{
+
+.mainInfo li span {
   color: var(--white_t);
 }
-.mainIn{
+
+.mainIn {
   background: var(--white_bg);
-  border: 1px solid black;
+  border: 1px solid var(--purpel);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   padding: 10px;
 }
-.mainIn ul{
+
+.mainIn div {
+  margin: 20px 0px;
+}
+
+.mainIn h3 {
+  font-family: var(--head_font);
+  color: var(--purpel);
+  font-weight: normal;
+  font-size: x-large;
+}
+
+.mainIn ul {
   list-style-type: none;
 }
-.mainIn input{
+
+.mainIn input {
   margin: 0px 5px;
 }
-.instructions ol{
+
+.ingredients li {
+  text-decoration: line-through;
+}
+
+.instructions ol {
   padding: 0px 15px;
+}
+
+.tag ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.tag li a {
+  padding: 5px 10px;
+  margin: 5px;
+  color: var(--white_bg);
+  background: var(--purpel);
+}
+
+.tag li a:hover {
+  background: var(--purpel_light);
+}
+
+.lComment {
+  padding: 10px;
+  margin: 10px 0px;
+  background: var(--white_bg);
+  border: 1px solid var(--purpel);
+  border-radius: 25px;
+}
+
+.lComment h3 {
+  font-family: var(--head_font);
+  color: var(--purpel);
+  font-weight: normal;
+  font-size: x-large;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.form-control label {
+  padding: 5px 0px;
+  font-family: var(--head_font);
+  color: var(--purpel_light);
+  font-size: larger;
+}
+
+.form-control input {
+
+  color: var(--purpel);
+  border-bottom-color: var(--purpel_light);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .009375em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  align-self: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 16px 6px;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid;
+  border-radius: 4px;
+  background: rgb(245, 245, 245);
+  height: 56px;
+}
+
+.form-control input:hover, .form-control textarea:hover {
+  border-bottom-color: var(--purpel);
+  background: #ececec;
+}
+
+.form-control input:focus, .form-control textarea:focus {
+  border-color: var(--purpel_light);
+}
+.form-control textarea{
+  color: var(--purpel);
+  border-bottom-color: var(--purpel_light);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .009375em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  box-sizing: border-box;
+  padding: 20px 16px 6px;
+  border: 1px solid;
+  border-radius: 4px;
+  background: rgb(245, 245, 245);
+  height: 200px;
+  resize: none;
+}
+.lComment button{
+  color: var(--white_bg);
+  background: var(--purpel);
+  padding: 10px 20px;
+  margin: 10px 0px;
+  font-family: var(--head_font);
+  font-size: x-large;
+  border: none;
+  cursor: pointer;
+}
+.lComment button:hover{
+  background: var(--white_bg);
+  color: var(--purpel_light);
+  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
 }

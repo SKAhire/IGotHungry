@@ -82,9 +82,9 @@ const Recipe = () => {
                                 <ul>
                                     <li><span>Course: </span> Main Course</li>
                                     <li><span>Cuisine: </span> Indian</li>
-                                    <li><span>Prep Time: </span> 10minutes minutes</li>
-                                    <li><span>Cook Time: </span> 45minutes minutes</li>
-                                    <li><span>Total Time: </span> 55minutes minutes</li>
+                                    <li><span>Prep Time: </span> 10minutes</li>
+                                    <li><span>Cook Time: </span> 45minutes</li>
+                                    <li><span>Total Time: </span> 55minutes</li>
                                     <li><span>Servings: </span> 4 Portions</li>
                                     <li><span>Author: </span> Guru</li>
                                 </ul>
@@ -93,39 +93,39 @@ const Recipe = () => {
                                 <div className="ingredients">
                                     <h3>Ingredients</h3>
                                     <ul>
-                                        <li>
+                                        <li className='line_through'>
                                             <input type="checkbox" name="checked" id="checked" />
                                             <span>4 eggs</span>
                                         </li>
-                                        <li>
+                                        <li className='line_through'>
                                             <input type="checkbox" name="checked" id="checked" />
                                             <span>1 cup melty quesadilla-style cheese</span>
                                         </li>
-                                        <li>
+                                        <li className='line_through'>
                                             <input type="checkbox" name="checked" id="checked" />
                                             <span>1 cup frozen roasted corn (see notes)</span>
                                         </li>
-                                        <li>
+                                        <li className='line_through'>
                                             <input type="checkbox" name="checked" id="checked" />
                                             <span>3–4 tortillas</span>
                                         </li>
-                                        <li>
+                                        <li className='line_through'>
                                             <input type="checkbox" name="checked" id="checked" />
                                             <span>1/2 cup refried black beans</span>
                                         </li>
-                                        <li>
+                                        <li className='line_through'>
                                             <input type="checkbox" name="checked" id="checked" />
                                             <span>1/4 cup pickled red onions</span>
                                         </li>
-                                        <li>
+                                        <li className='line_through'>
                                             <input type="checkbox" name="checked" id="checked" />
                                             <span>1/4 cup chopped cilantro</span>
                                         </li>
-                                        <li>
+                                        <li className='line_through'>
                                             <input type="checkbox" name="checked" id="checked" />
                                             <span>1/4 cup Cotjia cheese</span>
                                         </li>
-                                        <li>
+                                        <li className='line_through'>
                                             <input type="checkbox" name="checked" id="checked" />
                                             <span>aji verde, zhoug, or salsa verde</span>
                                         </li>
@@ -143,6 +143,44 @@ const Recipe = () => {
                                         <li>When the egg is cooked to your liking (I prefer it with the whites set and the yolk still a bit runny), transfer the egg to tortilla with refried black beans.</li>
                                         <li>Finish with pickled onions, cilantro, Cotija, and your sauce of choice. The crispy cheese edge. The runny yolk. The creamy beans, spicy sauce, tangy onions. Oh my word. YUM.</li>
                                     </ol>
+                                </div>
+                                <div className="tag">
+                                    <h3>Filed Under </h3>
+                                    <ul>
+                                        <li>
+                                            <Link>All Recipes</Link>
+                                        </li>
+                                        <li>
+                                            <Link>Tacos</Link>
+                                        </li>
+                                        <li>
+                                            <Link>Quick & Easy</Link>
+                                        </li>
+                                        <li>
+                                            <Link>Eggs</Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="comment">
+                                <div className="lComment">
+                                    <h3>Leave a Comment</h3>
+                                    <form action="">
+                                        <div className='form-control'>
+                                            <label htmlFor="name">Name</label>
+                                            <input type="text" name='name' id='name' />
+                                        </div>
+                                        <div className='form-control'>
+                                            <label htmlFor="email">Email</label>
+                                            <input type="email" name='email' id='email' />
+                                        </div>
+                                        <div className='form-control'>
+                                            <label htmlFor="comment">Comment</label>
+                                            <textarea name="comment" id="comment" cols="10" rows="10"></textarea>
+                                        </div>
+                                        <button type="submit">Submit</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
