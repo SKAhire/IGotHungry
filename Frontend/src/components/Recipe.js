@@ -78,6 +78,72 @@ const Recipe = () => {
                         <div className="mainRecipe" id="mainRecipe">
                             <div className="mainInfo">
                                 <img src="https://pinchofyum.com/wp-content/uploads/Fried-Egg-Tacos-4-768x1152.jpg" alt="" />
+                                <h2>Roasted Corn And Fried Egg Tacos</h2>
+                                <ul>
+                                    <li><span>Course: </span> Main Course</li>
+                                    <li><span>Cuisine: </span> Indian</li>
+                                    <li><span>Prep Time: </span> 10minutes minutes</li>
+                                    <li><span>Cook Time: </span> 45minutes minutes</li>
+                                    <li><span>Total Time: </span> 55minutes minutes</li>
+                                    <li><span>Servings: </span> 4 Portions</li>
+                                    <li><span>Author: </span> Guru</li>
+                                </ul>
+                            </div>
+                            <div className="mainIn">
+                                <div className="ingredients">
+                                    <h3>Ingredients</h3>
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" name="checked" id="checked" />
+                                            <span>4 eggs</span>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="checked" id="checked" />
+                                            <span>1 cup melty quesadilla-style cheese</span>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="checked" id="checked" />
+                                            <span>1 cup frozen roasted corn (see notes)</span>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="checked" id="checked" />
+                                            <span>3–4 tortillas</span>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="checked" id="checked" />
+                                            <span>1/2 cup refried black beans</span>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="checked" id="checked" />
+                                            <span>1/4 cup pickled red onions</span>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="checked" id="checked" />
+                                            <span>1/4 cup chopped cilantro</span>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="checked" id="checked" />
+                                            <span>1/4 cup Cotjia cheese</span>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="checked" id="checked" />
+                                            <span>aji verde, zhoug, or salsa verde</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className="instructions">
+                                    <h3>Instructions</h3>
+                                    <ol>
+                                        <li>Heat a nonstick or cast iron skillet over medium heat. Add your cheese in a ring shape.</li>
+                                        <li>Once it starts to melt a little bit, crack an egg directly into the center. </li>
+                                        <li>Spoon a bit of roasted corn around the edge of the egg. </li>
+                                        <li>Use a spatula to pull the edges in a bit once the cheese starts to get golden brown; you don’t have to do this, but I find that it helps to contain the egg a bit and expose those golden brown lacy edges.</li>
+                                        <li>Cover and let it cook for a minute or two.</li>
+                                        <li>When the egg is cooked to your liking (I prefer it with the whites set and the yolk still a bit runny), transfer the egg to tortilla with refried black beans.</li>
+                                        <li>Finish with pickled onions, cilantro, Cotija, and your sauce of choice. The crispy cheese edge. The runny yolk. The creamy beans, spicy sauce, tangy onions. Oh my word. YUM.</li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
                     </div>

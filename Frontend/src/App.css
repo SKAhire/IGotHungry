@@ -557,9 +557,50 @@ body {
   font-weight: normal;
 }
 .mainInfo{
-  
+  background: var(--purpel);
+  text-align: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.mainInfo h2{
+  color: var(--white_bg);
+  text-decoration: underline;
 }
 .mainInfo img{
+  border: 3px solid var(--purpel_light);
+  padding: 3px;
+  margin-top: 10px;
+  border-radius: 50%;
   height: 183px;
   width: 183px;
+}
+.mainInfo ul{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+.mainInfo li{
+  /* padding: 0px 5px; */
+  color: var(--white_bg);
+}
+.mainInfo li span{
+  color: var(--white_t);
+}
+.mainIn{
+  background: var(--white_bg);
+  border: 1px solid black;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 10px;
+}
+.mainIn ul{
+  list-style-type: none;
+}
+.mainIn input{
+  margin: 0px 5px;
+}
+.instructions ol{
+  padding: 0px 15px;
 }
