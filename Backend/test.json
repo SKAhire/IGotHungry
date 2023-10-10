@@ -1,0 +1,51 @@
+{
+    "readyInMin": "45 mintuies",
+    "servings": "4",
+    "image": "test.jpg",
+    "summary": "summary testing",
+    "course": "course test",
+    "cuisine": "cuisine test",
+    "categoiry": {
+        "quick": true,
+        "dinner": false,
+        "vegetarian": false,
+        "healty": false,
+        "instantPot": false,
+        "vegan": false,
+        "mealPrep": true,
+        "soup": false,
+        "salads": false
+    },
+    "steps": [
+        {
+            "number": "1",
+            "stitle": "step title",
+            "sdesc": "step description",
+            "simage": "stest.jpg"
+        },
+        {
+            "number": "2",
+            "stitle": "step title2",
+            "sdesc": "step description2",
+            "simage": "stest2.jpg"
+        },
+        {
+            "number": "3",
+            "stitle": "step title3",
+            "sdesc": "step description3",
+            "simage": "stest3.jpg"
+        }
+    ],
+    "recipeInfo": {
+        "ingredients": [
+            "ingredients1",
+            "ingredients2",
+            "ingredients3"
+        ],
+        "instructions": [
+            "instruction1",
+            "instruction2",
+            "instruction3"
+        ]
+    }
+}

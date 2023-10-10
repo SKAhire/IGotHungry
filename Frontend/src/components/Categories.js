@@ -119,7 +119,7 @@ const Categories = () => {
             </div>
 
             <div className="viewAll">
-                <Link to="/">All Recipies</Link>
+                <Link to="/recipes">All Recipies</Link>
             </div>
 
         </>

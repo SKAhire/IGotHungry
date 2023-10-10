@@ -24,7 +24,7 @@ const HomeMain = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aspernatur laboriosam voluptate incidunt explicabo rem doloribus asperiores sequi ratione numquam nobis reprehenderit praesentium maxime suscipit iure magni alias ut dicta error quasi quia, eos, exercitationem omnis molestias. Magni explicabo sunt illo, ipsam cupiditate veritatis vel quibusdam consequuntur officiis deserunt repellendus.
                     </p>
                     <div className="viewAll">
-                        <Link to="/">Read More</Link>
+                        <Link to="/about">Read More</Link>
                     </div>
                 </div>
             </section>
@@ -45,7 +45,7 @@ const HomeMain = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aspernatur laboriosam voluptate incidunt explicabo rem doloribus asperiores sequi ratione numquam nobis reprehenderit praesentium maxime suscipit iure magni alias ut dicta error quasi quia, eos, exercitationem omnis molestias. Magni explicabo sunt illo, ipsam cupiditate veritatis vel quibusdam consequuntur officiis deserunt repellendus.
                     </p>
                     <div className="viewAll">
-                        <Link to="/">Submit</Link>
+                        <Link to="/submit">Submit</Link>
                     </div>
                 </div>
             </section>

@@ -5,11 +5,11 @@ const Recipe = () => {
 
     const [close, setClose] = useState('rCommentv');
 
-    let handleClose = (e) =>{
+    let handleClose = (e) => {
         e.preventDefault();
-        if(close === 'rCommentv'){
+        if (close === 'rCommentv') {
             setClose('rCommentf')
-        }else{
+        } else {
             setClose('rCommentv')
         }
     }
@@ -39,6 +39,7 @@ const Recipe = () => {
 
                     <div className="recipeBody">
                         <div className="recipeDesc">
+                            
                             <h2 className="recTitle">Roasted Corn and Fried Egg Tacos</h2>
                             <p>Roasted Corn and Fried Egg Tacos with a crispy, cheesy, lacy-edged egg, corn, cotjia cheese, cilantro, pickled onions and sauce all piled into a tortilla with refried beans.</p>
                             <img src="https://pinchofyum.com/wp-content/uploads/Fried-Egg-Tacos-4-768x1152.jpg" alt="" />
@@ -205,6 +206,9 @@ const Recipe = () => {
                                         </Link>
                                     </div>
                                 </div>
+                                <div className="viewAll">
+                                    <Link to="/recipes">All Recipies</Link>
+                                </div>
                             </div>
                             <div className="comment">
                                 <div className="lComment">
@@ -228,8 +232,9 @@ const Recipe = () => {
                                 <div className={`${close}`}>
                                     <div className="lComment">
                                         <h3>Reply to Comment</h3>
-                                        
+
                                         <form action="" method='Post'>
+                                            <input type="hidden" name='id' id='id' value={'id'} />
                                             <div className='form-control'>
                                                 <label htmlFor="name">Name</label>
                                                 <input type="text" name='name' id='name' />

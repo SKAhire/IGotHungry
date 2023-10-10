@@ -18,7 +18,7 @@ const Slider = () => {
                     <div className="slideInfo">
                         <p>SIMPLE RECIPES MADE FOR
                             real, actual, everyday life.</p>
-                        <a href="/">All Recipies</a>
+                        <a href="/recipes">All Recipies</a>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@ const Slider = () => {
                     </div>
                     <div className="slideInfo">
                     <p>We’ve organized these recipes every way we could think of so you don't have to! <br />no matter how you browse, we’re sure you’ll find just what you were looking for.</p>
-                        <a href="/">All Recipies</a>
+                        <a href="/recipes">All Recipies</a>
                     </div>
                     
                 </div>
@@ -39,7 +39,7 @@ const Slider = () => {
                     </div>
                     <div className="slideInfo">
                     <p>Out of all the many recipes on I Got Hungry, these are our shining stars - <br />the recipes we come back to again and again (and again).</p>
-                        <a href="/">All Recipies</a>
+                        <a href="/recipes">All Recipies</a>
                     </div>
                     
                 </div>

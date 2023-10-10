@@ -10,11 +10,11 @@ const Footer = () => {
           <div className="ighMenu">
             <Link to="/"><h4>I Got Hungry</h4></Link>
             <div className="footerLinks">
-              <Link to="/">Recipes</Link>
-              <Link to="/">Start Here</Link>
-              <Link to="/">About</Link>
-              <Link to="/">Submit</Link>
-              <Link to="/">Contact</Link>
+              <Link to="/recipes">Recipes</Link>
+              <Link to="/recipes/id">Start Here</Link>
+              <Link to="/about">About</Link>
+              <Link to="/submit">Submit</Link>
+              <Link to="/contact">Contact</Link>
             </div>
           </div>
 

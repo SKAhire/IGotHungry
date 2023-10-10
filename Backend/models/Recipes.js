@@ -18,61 +18,86 @@ const recipesSchema = new Schema({
         type: String,
         require: true
     },
-    dishTypes: {
+    cuisine: {
         type: String,
         require: true
     },
-    instructions: {
+    course: {
         type: String,
         require: true
+    },
+    categoiry: {
+        type: Object,
+        require: true,
+        quick: {
+            type: Boolean,
+            require: true
+        },
+        dinner: {
+            type: Boolean,
+            require: true
+        },
+        vegetarian: {
+            type: Boolean,
+            require: true
+        },
+        healty: {
+            type: Boolean,
+            require: true
+        },
+        instantPot: {
+            type: Boolean,
+            require: true
+        },
+        vegan: {
+            type: Boolean,
+            require: true
+        },
+        mealPrep: {
+            type: Boolean,
+            require: true
+        },
+        soup: {
+            type: Boolean,
+            require: true
+        },
+        salads: {
+            type: Boolean,
+            require: true
+        },
     },
     steps: {
         type: Array,
-        require: true
+        require: true,
+        number: {
+            type: String,
+            require: true
+        },
+
+        stitle: {
+            type: String,
+            require: true
+        },
+        sdesc: {
+            type: String,
+            require: true
+        },
+        simage: {
+            type: String,
+            require: true
+        },
     },
-    step: {
-        type: String,
-        require: true
-    },
-    title: {
-        type: String,
-        require: true
-    },
-    veg: {
-        type: Boolean,
-        require: true
-    },
-    healty: {
-        type: Boolean,
-        require: true
-    },
-    cheap: {
-        type: Boolean,
-        require: true
-    },
-    quick: {
-        type: Boolean,
-        require: true
-    },
-    sustainable: {
-        type: Boolean,
-        require: true
-    },
-    iname: {
-        type: String,
-        require: true
-    },
-    inameclean: {
-        type: String,
-        require: true
-    },
-    iimage: {
-        type: String,
-        require: true
-    },
-    iamount: {
-        type: String,
-        require: true
+    recipeInfo: {
+        type: Object,
+        require: true,
+        ingredients: {
+            type: Array,
+            require: true
+        },
+        instructions: {
+            type: Array,
+            require: true
+        }
     },
     date: {
         type: Date,
