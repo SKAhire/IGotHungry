@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Recipe = () => {
+
+    const [close, setClose] = useState('rCommentv');
+
+    let handleClose = (e) =>{
+        e.preventDefault();
+        if(close === 'rCommentv'){
+            setClose('rCommentf')
+        }else{
+            setClose('rCommentv')
+        }
+    }
+    // let handleOpen = () =>{
+    //     setClose('rCommentf')
+    // }
     return (
         <>
 
@@ -163,6 +177,35 @@ const Recipe = () => {
                                 </div>
                             </div>
 
+                            <div className="relatedCont">
+                                <h3>Related Recipes</h3>
+                                <div className="related">
+                                    <div className="rRecipe">
+                                        <Link to='/recipes/id'>
+
+                                            <img src="https://pinchofyum.com/wp-content/uploads/Egg-Waffles-Square.jpg" alt="" />
+                                            <h4>EGG WAFFLES WITH ROMESCO AND GOAT CHEESE</h4>
+
+                                        </Link>
+                                    </div>
+                                    <div className="rRecipe">
+                                        <Link to='/recipes/id'>
+
+                                            <img src="https://pinchofyum.com/wp-content/uploads/Breakfast-Sandwich-Recipe-1200x1200.jpg" alt="" />
+                                            <h4>THE ULTIMATE BREAKFAST SANDWICH</h4>
+
+                                        </Link>
+                                    </div>
+                                    <div className="rRecipe">
+                                        <Link to='/recipes/id'>
+
+                                            <img src="https://pinchofyum.com/wp-content/uploads/Red-Chile-Tostadas-with-Eggs-Square.png" alt="" />
+                                            <h4>RED CHILE TOSTADAS WITH EGGS</h4>
+
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="comment">
                                 <div className="lComment">
                                     <h3>Leave a Comment</h3>
@@ -182,6 +225,28 @@ const Recipe = () => {
                                         <button type="submit">Post Comment</button>
                                     </form>
                                 </div>
+                                <div className={`${close}`}>
+                                    <div className="lComment">
+                                        <h3>Reply to Comment</h3>
+                                        
+                                        <form action="" method='Post'>
+                                            <div className='form-control'>
+                                                <label htmlFor="name">Name</label>
+                                                <input type="text" name='name' id='name' />
+                                            </div>
+                                            <div className='form-control'>
+                                                <label htmlFor="email">Email</label>
+                                                <input type="email" name='email' id='email' />
+                                            </div>
+                                            <div className='form-control'>
+                                                <label htmlFor="comment">Comment</label>
+                                                <textarea name="comment" id="comment" cols="10" rows="10"></textarea>
+                                            </div>
+                                            <button type="submit">Post Comment</button>
+                                            <button className='closeR' onClick={handleClose} >Close</button>
+                                        </form>
+                                    </div>
+                                </div>
                                 <div className="vComment">
                                     <h3>2 Comments</h3>
                                     <div className="mainComment">
@@ -190,14 +255,14 @@ const Recipe = () => {
                                         <p>
                                             Longtime reader, first time commenter! I made these for breakfast today because I just happened to have all the ingredients on hand (including pickled red onions in my fridge). So easy and so good!
                                         </p>
-                                        <button>Reply</button>
+                                        <button onClick={handleClose}>Reply</button>
                                         <div className="rComment">
                                             <h4>GURU</h4>
                                             <h5>10/05/23 @ 6:20 AM</h5>
                                             <p>
                                                 It was fate! 🙂 So glad you enjoyed it!
                                             </p>
-                                            <button>Reply</button>
+                                            <button onClick={handleClose}>Reply</button>
                                         </div>
                                     </div>
                                     <div className="mainComment">
@@ -206,14 +271,14 @@ const Recipe = () => {
                                         <p>
                                             Longtime reader, first time commenter! I made these for breakfast today because I just happened to have all the ingredients on hand (including pickled red onions in my fridge). So easy and so good!
                                         </p>
-                                        <button>Reply</button>
+                                        <button onClick={handleClose}>Reply</button>
                                         <div className="rComment">
                                             <h4>GURU</h4>
                                             <h5>10/05/23 @ 6:20 AM</h5>
                                             <p>
                                                 It was fate! 🙂 So glad you enjoyed it!
                                             </p>
-                                            <button>Reply</button>
+                                            <button onClick={handleClose}>Reply</button>
                                         </div>
                                         <div className="rComment">
                                             <h4>GURU</h4>
@@ -221,7 +286,7 @@ const Recipe = () => {
                                             <p>
                                                 It was fate! 🙂 So glad you enjoyed it!
                                             </p>
-                                            <button>Reply</button>
+                                            <button onClick={handleClose}>Reply</button>
                                         </div>
                                     </div>
                                 </div>
