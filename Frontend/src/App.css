@@ -609,7 +609,7 @@ body {
 }
 
 .stepBody h3 {
-  color: var(--purpel_light);
+  color: var(--purpel);
   font-family: var(--head_font);
   font-weight: normal;
 }
@@ -653,7 +653,7 @@ body {
 
 .mainIn {
   background: var(--white_bg);
-  border: 1px solid var(--purpel);
+  border: 4px solid var(--purpel);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   padding: 10px;
@@ -709,11 +709,11 @@ body {
   padding: 10px;
   margin: 10px 0px;
   background: var(--white_bg);
-  border: 1px solid var(--purpel);
+  border: 4px solid var(--purpel);
   border-radius: 25px;
 }
 
-.lComment h3 {
+.lComment h3, .vComment h3 {
   font-family: var(--head_font);
   color: var(--purpel);
   font-weight: normal;
@@ -729,7 +729,7 @@ body {
 .form-control label {
   padding: 5px 0px;
   font-family: var(--head_font);
-  color: var(--purpel_light);
+  color: var(--purpel);
   font-size: larger;
 }
 
@@ -791,4 +791,46 @@ body {
   background: var(--white_bg);
   color: var(--purpel_light);
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
+}
+
+.vComment{
+  padding: 10px;
+  margin: 10px 0px;
+}
+.vComment h3{
+  border-bottom: 2px solid var(--purpel);
+}
+
+.mainComment {
+  border-bottom: 2px solid var(--purpel);
+  background: var(--white_bg);
+  padding: 10px;
+}
+.mainComment h4{
+  font-family: var(--head_font);
+  color: var(--purpel);
+  font-weight: normal;
+  font-size: large;
+}
+.mainComment h5{
+  font-family: var(--head_font);
+  color: var(--purpel_light);
+  font-weight: normal;
+}
+.mainComment button{
+  background: none;
+  color: var(--purpel);
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+.mainComment button:hover{
+  color: var(--purpel_light);
+}
+.rComment{
+  margin: 15px;
+  margin-left: 45px;
+  padding: 5px;
+  border-left: 2px solid var(--purpel);
 }

@@ -1,7 +1,10 @@
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Recipes from './components/Recipes';
-import Recipe from './components/Recipe';
+import Home from './routes/Home';
+import Recipes from './routes/Recipes';
+import Recipe from './routes/Recipe';
+import About from './routes/About';
+import Submit from './routes/Submit';
+import Contact from './routes/Contact';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -21,7 +24,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/recipes/id" element={<Recipe/>} />
-          {/* <Route exact path="/about" element={<About />} /> */}
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/submit" element={<Submit />} />
+          <Route exact path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </Router>

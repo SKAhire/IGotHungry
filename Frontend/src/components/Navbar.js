@@ -27,9 +27,9 @@ const Navbar = () => {
                             <Link to="/recipes">Recipes</Link>
                             <Link to="/recipes/id">Start Here</Link>
                             <Link to="/" className={`${scrollTop.imgClass}`}><img src={`${scrollTop.scrollImg}`} alt="IGotHungry" /></Link>
-                           <Link to="/">About</Link>
-                           <Link to="/">Submit</Link>
-                           <Link to="/">Contact</Link>
+                           <Link to="/about">About</Link>
+                           <Link to="/submit">Submit</Link>
+                           <Link to="/contact">Contact</Link>
                     </div>
                 </div>
             </header>

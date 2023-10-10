@@ -1,6 +1,6 @@
 import React from 'react'
-import Slider from './Slider'
-import HomeMain from './HomeMain'
+import Slider from '../components/Slider'
+import HomeMain from '../components/HomeMain'
 
 const Home = () => {
   return (

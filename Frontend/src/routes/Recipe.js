@@ -179,8 +179,51 @@ const Recipe = () => {
                                             <label htmlFor="comment">Comment</label>
                                             <textarea name="comment" id="comment" cols="10" rows="10"></textarea>
                                         </div>
-                                        <button type="submit">Submit</button>
+                                        <button type="submit">Post Comment</button>
                                     </form>
+                                </div>
+                                <div className="vComment">
+                                    <h3>2 Comments</h3>
+                                    <div className="mainComment">
+                                        <h4>ARIES</h4>
+                                        <h5>10/05/23 @ 1:19 AM</h5>
+                                        <p>
+                                            Longtime reader, first time commenter! I made these for breakfast today because I just happened to have all the ingredients on hand (including pickled red onions in my fridge). So easy and so good!
+                                        </p>
+                                        <button>Reply</button>
+                                        <div className="rComment">
+                                            <h4>GURU</h4>
+                                            <h5>10/05/23 @ 6:20 AM</h5>
+                                            <p>
+                                                It was fate! 🙂 So glad you enjoyed it!
+                                            </p>
+                                            <button>Reply</button>
+                                        </div>
+                                    </div>
+                                    <div className="mainComment">
+                                        <h4>ARIES</h4>
+                                        <h5>10/05/23 @ 1:19 AM</h5>
+                                        <p>
+                                            Longtime reader, first time commenter! I made these for breakfast today because I just happened to have all the ingredients on hand (including pickled red onions in my fridge). So easy and so good!
+                                        </p>
+                                        <button>Reply</button>
+                                        <div className="rComment">
+                                            <h4>GURU</h4>
+                                            <h5>10/05/23 @ 6:20 AM</h5>
+                                            <p>
+                                                It was fate! 🙂 So glad you enjoyed it!
+                                            </p>
+                                            <button>Reply</button>
+                                        </div>
+                                        <div className="rComment">
+                                            <h4>GURU</h4>
+                                            <h5>10/05/23 @ 6:20 AM</h5>
+                                            <p>
+                                                It was fate! 🙂 So glad you enjoyed it!
+                                            </p>
+                                            <button>Reply</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
