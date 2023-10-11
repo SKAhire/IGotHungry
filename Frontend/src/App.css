@@ -757,7 +757,6 @@ body {
 }
 
 .form-control input {
-
   color: var(--purpel);
   border-bottom-color: var(--purpel_light);
   font-size: 1.3rem;
@@ -881,4 +880,29 @@ body {
 .rCommentf .lComment .closeR{
   float: right;
   top: 0;
+}
+
+.loginF{
+  width: 40%;
+  margin: auto;
+}
+.loginF h3{
+  text-align: center;
+}
+.loginF .form-control{
+  width: 100%;
+}
+.logBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.logBtn a{
+  font-family: var(--head_font);
+  color: var(--purpel);
+}
+.logBtn a:hover{
+  color: var(--purpel_light);
+  text-decoration: underline;
 }

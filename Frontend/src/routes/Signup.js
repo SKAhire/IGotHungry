@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Login = () => {
+const Signup = () => {
   return (
     <>
 
@@ -21,7 +21,7 @@ const Login = () => {
 
       <div className="loginF">
         <div className="lComment">
-          <h3>Login to I Got Hungry</h3>
+          <h3>Create account with I Got Hungry</h3>
 
           <form action="" method='Post'>
             <div className='form-control'>
@@ -36,11 +36,14 @@ const Login = () => {
               <label htmlFor="password">Password</label>
               <input type="password" name='password' id='password' />
             </div>
+            <div className='form-control'>
+              <label htmlFor="cpassword">Confirm Password</label>
+              <input type="password" name='cpassword' id='cpassword' />
+            </div>
 
             <div className="logBtn">
-              <button type="submit">Login</button>
-              <Link >Forgot Password?</Link>
-              <p>New to I Got Hungry <Link to="/signup">Create Account!</Link></p>
+              <button type="submit">Signin</button>
+              <p>Already have an account <Link to="/signup">Login!</Link></p>
             </div>
           </form>
         </div>
@@ -49,4 +52,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup

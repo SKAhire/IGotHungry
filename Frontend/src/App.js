@@ -5,6 +5,8 @@ import Recipe from './routes/Recipe';
 import About from './routes/About';
 import Submit from './routes/Submit';
 import Contact from './routes/Contact';
+import Login from './routes/Login';
+import Signup from './routes/Signup';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -27,6 +29,8 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/submit" element={<Submit />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
         </Routes>
         <Footer />
       </Router>
