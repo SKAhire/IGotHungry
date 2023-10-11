@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const recipesSchema = new Schema({
+    title: {
+        type: String,
+        require: true
+    },
     readyInMin: {
         type: String,
         require: true
@@ -31,39 +35,48 @@ const recipesSchema = new Schema({
         require: true,
         quick: {
             type: Boolean,
-            require: true
+            require: true,
+            default: false
         },
         dinner: {
             type: Boolean,
-            require: true
+            require: true,
+            default: false
         },
         vegetarian: {
             type: Boolean,
-            require: true
+            require: true,
+            default: false
         },
         healty: {
             type: Boolean,
-            require: true
+            require: true,
+            default: false
         },
         instantPot: {
             type: Boolean,
-            require: true
+            require: true,
+            default: false
         },
         vegan: {
             type: Boolean,
-            require: true
+            require: true,
+            default: false
         },
         mealPrep: {
             type: Boolean,
-            require: true
+            require: true,
+            default: false
         },
         soup: {
             type: Boolean,
-            require: true
+            require: true,
+            default: false
         },
         salads: {
             type: Boolean,
-            require: true
+            require: true,
+            default: false
         },
     },
     steps: {
@@ -105,4 +118,5 @@ const recipesSchema = new Schema({
     }
 })
 
+// update recipes.js input method in routes
 module.exports = mongoose.model('Recipes', recipesSchema)
