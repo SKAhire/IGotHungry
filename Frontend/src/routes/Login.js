@@ -1,7 +1,37 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const [credentials, setCredentials] = useState({ email: "", password: "" })
+  let navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('http://localhost:5000/user/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: credentials.email,
+        password: credentials.password
+      })
+    });
+
+    const json = await response.json();
+    if (json.success) {
+      // save the auth token and redirect 
+      localStorage.setItem('token', json.authToken);
+      navigate('/')
+    } else {
+      alert('Invalid Credentials')
+    }
+  }
+
+  const onChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value })
+  }
+
   return (
     <>
 
@@ -23,18 +53,14 @@ const Login = () => {
         <div className="lComment">
           <h3>Login to I Got Hungry</h3>
 
-          <form action="" method='Post'>
-            <div className='form-control'>
-              <label htmlFor="name">Name</label>
-              <input type="text" name='name' id='name' />
-            </div>
+          <form onSubmit={handleSubmit} method='Post'>
             <div className='form-control'>
               <label htmlFor="email">Email</label>
-              <input type="email" name='email' id='email' />
+              <input type="email" name='email' id='email' onChange={onChange} value={credentials.email} />
             </div>
             <div className='form-control'>
               <label htmlFor="password">Password</label>
-              <input type="password" name='password' id='password' />
+              <input type="password" name='password' id='password' onChange={onChange} value={credentials.password} />
             </div>
 
             <div className="logBtn">

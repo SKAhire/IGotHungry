@@ -157,6 +157,7 @@ router.delete('/deleteuser/:id', async (req, res) => {
     }
 })
 
+// login user
 router.post('/login',[
     body('email', "Enter a valid Email").isEmail(),
     body('password', 'Password must have a minimum of 5 characters').isLength({ min: 5 }),
@@ -174,7 +175,7 @@ router.post('/login',[
             return res.status(400).json({ success, error: "Please try to login with correct credentials" })
         }
 
-        const passCompare = bcrypt.compare(password, user.password)
+        const passCompare = await bcrypt.compare(password, user.password)
         if(!passCompare){
             return res.status(400).json({ success, error: "Please try to login with correct credentials" })
         }
