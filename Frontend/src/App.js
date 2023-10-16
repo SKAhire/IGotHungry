@@ -8,6 +8,7 @@ import Contact from './routes/Contact';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
 import Footer from './components/Footer';
+import UserState from './context/users/UserState';
 import './App.css';
 
 import {
@@ -21,18 +22,20 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/recipes" element={<Recipes />} />
-          <Route path="/recipes/id" element={<Recipe/>} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/submit" element={<Submit />} />
-          <Route exact path="/contact" element={<Contact />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
-        </Routes>
-        <Footer />
+        <UserState>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/recipes/id" element={<Recipe />} />
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/submit" element={<Submit />} />
+            <Route exact path="/contact" element={<Contact />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+          </Routes>
+          <Footer />
+        </UserState>
       </Router>
     </>
   );

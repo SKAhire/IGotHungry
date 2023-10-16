@@ -1,32 +1,42 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
+import UserContext from '../context/users/UserContext'
 
 const Login = () => {
+  const context = useContext(UserContext);
+  const {userLogin} = context;
+  
   const [credentials, setCredentials] = useState({ email: "", password: "" })
-  let navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:5000/user/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: credentials.email,
-        password: credentials.password
-      })
-    });
-
-    const json = await response.json();
-    if (json.success) {
-      // save the auth token and redirect 
-      localStorage.setItem('token', json.authToken);
-      navigate('/')
-    } else {
-      alert('Invalid Credentials')
-    }
+    userLogin(credentials.email, credentials.password)
   }
+
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const response = await fetch('http://localhost:5000/user/login', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       email: credentials.email,
+  //       password: credentials.password
+  //     })
+  //   });
+
+  //   const json = await response.json();
+  //   if (json.success) {
+  //     // save the auth token and redirect 
+  //     localStorage.setItem('token', json.authToken);
+  //     navigate('/')
+  //   } else {
+  //     alert('Invalid Credentials')
+  //   }
+  // }
 
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value })
@@ -60,7 +70,7 @@ const Login = () => {
             </div>
             <div className='form-control'>
               <label htmlFor="password">Password</label>
-              <input type="password" name='password' id='password' onChange={onChange} value={credentials.password} />
+              <input type="password" current-password name='password' id='password' onChange={onChange} value={credentials.password} />
             </div>
 
             <div className="logBtn">
