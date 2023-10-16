@@ -7,6 +7,7 @@ import Submit from './routes/Submit';
 import Contact from './routes/Contact';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
+import Profile from './routes/Profile';
 import Footer from './components/Footer';
 import UserState from './context/users/UserState';
 import './App.css';
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/my-profile" element={<Profile />} />
           </Routes>
           <Footer />
         </UserState>

@@ -30,8 +30,31 @@ const UserState = (props) => {
         }
     }
 
+    // add user
+    const userSignin = async (name, email, password) => {
+        const response = await fetch(`${host}/user/adduser`,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: name,
+                email: email,
+                password: password
+            })
+        })
+        const json = await response.json();
+        if (json.success) {
+            // save the auth token and redirect 
+            // localStorage.setItem('token', json.authToken);
+            navigate('/login')
+        } else {
+            alert('Invalid Credentials')
+        }
+    }
+
     return (
-        <UserContext.Provider value={{ userLogin }}>
+        <UserContext.Provider value={{ userLogin, userSignin }}>
             {props.children}
         </UserContext.Provider>
     )
