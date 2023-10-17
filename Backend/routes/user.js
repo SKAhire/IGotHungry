@@ -27,8 +27,20 @@ const upload = multer({storage: storage});
 
 
 
-router.get('/', (req, res) => {
-    res.send('this is user');
+router.get('/getuser',fetchuser, async (req, res) => {
+
+    try {
+        const user = await Users.findById(req.user.id);
+        res.json(user)
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+
+    const findUser = await Users.findById(req.user.id);
+        if (!findUser) {
+            return res.status(500).json({ success, error: "Internal Server Error" })
+        }
 })
 
 // To Add User
@@ -125,6 +137,47 @@ router.put('/edituser/:id', [
             username: username,
             email: email,
             password: secPass
+        })
+
+        const saveUser = await user.save();
+        success = true;
+        res.send({saveUser, success})
+        console.log(saveUser)
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
+
+//Edit user
+router.put('/edituser',fetchuser, [
+    body('username', 'Enter a valid name').isLength({ min: 3 }),
+    body('email', "Enter a valid Email").isEmail(),
+], async (req, res) => {
+
+    let success = false;
+    const error = validationResult(req);
+    if (!error.isEmpty()) {
+        res.status(400).json({ success, error: error.array() });
+    }
+
+    try {
+
+        const findUser = await Users.findById(req.user.id);
+        if (!findUser) {
+            return res.status(500).json({ success, error: "Internal Server Error" })
+        }
+        const userVal = await Users.findOne({ username: req.body.username });
+        const emailVal = await Users.findOne({ email: req.body.email });
+        if (emailVal) {
+            return res.status(400).json({ success, error: "This email is already in use! Try login" })
+        }
+
+        const { username, email } = req.body;
+
+        const user = await Users.findByIdAndUpdate( req.user.id,{
+            username: username,
+            email: email
         })
 
         const saveUser = await user.save();

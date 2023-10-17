@@ -1,23 +1,32 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import UserContext from '../context/users/UserContext'
 
 
 const EditUser = () => {
 
     const context = useContext(UserContext);
-    const {userSignin} = context;
-    
-    const [credentials, setCredentials] = useState({ name:"", email: "", password: "", cpassword:"" })
-  
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      userSignin(credentials.name, credentials.email, credentials.password)
-    }
-    const onChange = (e) => {
-      setCredentials({ ...credentials, [e.target.name]: e.target.value })
-    }
+    const { user, getUser, editUser } = context;
+    const [name, setName] = useState()
+    const [email, setEmail] = useState()
+    // const [credentials, setCredentials] = useState({ ename: "", eemail: "" })
 
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            getUser()
+        }
+        // eslint-disable-next-line
+    })
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        editUser(name, email)
+    }
+    const onChangeName = (e) => {
+        setName({ ...name, [e.target.name]: e.target.value });
+    }
+    const onChangeEmail = (e) => {
+        setEmail({ ...email, [e.target.name]: e.target.value });
+    }
     return (
         <>
 
@@ -27,12 +36,12 @@ const EditUser = () => {
 
                     <form onSubmit={handleSubmit} method='Post'>
                         <div className='form-control'>
-                            <label htmlFor="name">Name</label>
-                            <input type="text" name='name' id='name' onChange={onChange} />
+                            <label htmlFor="ename">Name</label>
+                            <input type="text" name='ename' id='ename' value={user.username} onChange={onChangeName} />
                         </div>
                         <div className='form-control'>
                             <label htmlFor="email">Email</label>
-                            <input type="email" name='email' id='email' onChange={onChange} />
+                            <input type="email" name='eemail' id='eemail' value={user.email} onChange={onChangeEmail} />
                         </div>
 
 
@@ -43,7 +52,7 @@ const EditUser = () => {
 
                     <h3>Change Password</h3>
 
-                    <form onSubmit={handleSubmit} method='Post'>
+                    {/* <form onSubmit={handleSubmit} method='Post'>
 
                         <div className='form-control'>
                             <label htmlFor="password">Password</label>
@@ -57,11 +66,11 @@ const EditUser = () => {
                             <button type="submit">Change Password</button>
                         </div>
 
-                    </form>
+                    </form> */}
 
                 </div>
             </div>
-           
+
         </>
     )
 }
