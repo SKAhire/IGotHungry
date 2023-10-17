@@ -1,4 +1,5 @@
 import React from 'react';
+import EditUser from '../components/EditUser';
 import { Link } from 'react-router-dom';
 
 const Profile = () => {
@@ -16,6 +17,18 @@ const Profile = () => {
                     <p>
                         Here is the step by step guideance to create RecipeName
                     </p>
+                </div>
+            </div>
+
+            <div className="profileMain">
+                <div className="profileMenu">
+                    <div className="menuOptions">
+                        <Link to="/bookmark">Bookmark</Link>
+                        <Link to="/logout">Logout</Link>
+                    </div>
+                </div>
+                <div className="profileCont">
+                    <EditUser />
                 </div>
             </div>
 

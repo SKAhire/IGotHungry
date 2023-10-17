@@ -906,3 +906,41 @@ body {
   color: var(--purpel_light);
   text-decoration: underline;
 }
+
+/* profile page */
+.profileMain{
+  display: flex;
+}
+.profileMenu{
+  position: sticky;
+  background: var(--white_bg);
+  z-index: 99;
+  top: 0;
+}
+.menuOptions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 20px 10px;
+}
+.menuOptions a{
+  color: var(--purpel);
+  font-weight: bold;
+  padding: 5px 40px;
+  width: 100%;
+}
+.menuOptions a:hover{
+  color: white;
+  background: var(--purpel);
+
+}
+
+.profileCont{
+  padding: 60px 12px;
+  margin: 10px 100px;
+  width: 100%;
+}
+.profileCont .loginF {
+  width: 70%;
+}

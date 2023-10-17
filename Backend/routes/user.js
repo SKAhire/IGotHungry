@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const Users = require('../models/User');
+const fetchuser = require('../middleware/fetchuser');
 
 // require to upload files
 const multer = require('multer');
