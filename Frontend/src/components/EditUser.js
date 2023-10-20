@@ -5,27 +5,34 @@ import UserContext from '../context/users/UserContext'
 const EditUser = () => {
 
     const context = useContext(UserContext);
-    const { user, getUser, editUser } = context;
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    // const [credentials, setCredentials] = useState({ ename: "", eemail: "" })
-
+    const { user, getUser, editUser, editPass } = context;
+    
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getUser()
         }
         // eslint-disable-next-line
     })
+    
+    const [credentials, setCredentials] = useState({ ename: user.username, eemail: user.email })
+    const [changePass, setChangePass] = useState({password: "", cpassword:""})
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        editUser(name, email)
+        editUser(credentials.ename, credentials.eemail)
     }
-    const onChangeName = (e) => {
-        setName({ ...name, [e.target.name]: e.target.value });
+    const handleChangePass = async (e) => {
+        e.preventDefault();
+        if(changePass.password===changePass.cpassword){
+            editPass(changePass.password);
+            setChangePass({password: "", cpassword:""})
+        }
     }
-    const onChangeEmail = (e) => {
-        setEmail({ ...email, [e.target.name]: e.target.value });
+    const onChange = (e) => {
+        setCredentials({ ...credentials, [e.target.name]: e.target.value })
+    }
+    const onChangePass = (e) => {
+        setChangePass({ ...changePass, [e.target.name]: e.target.value })
     }
     return (
         <>
@@ -37,11 +44,11 @@ const EditUser = () => {
                     <form onSubmit={handleSubmit} method='Post'>
                         <div className='form-control'>
                             <label htmlFor="ename">Name</label>
-                            <input type="text" name='ename' id='ename' value={user.username} onChange={onChangeName} />
+                            <input type="text" name='ename' id='ename' value={credentials.ename} onChange={onChange} />
                         </div>
                         <div className='form-control'>
                             <label htmlFor="email">Email</label>
-                            <input type="email" name='eemail' id='eemail' value={user.email} onChange={onChangeEmail} />
+                            <input type="email" name='eemail' id='eemail' value={credentials.eemail} onChange={onChange} />
                         </div>
 
 
@@ -52,21 +59,21 @@ const EditUser = () => {
 
                     <h3>Change Password</h3>
 
-                    {/* <form onSubmit={handleSubmit} method='Post'>
+                    <form onSubmit={handleChangePass} method='Post'>
 
                         <div className='form-control'>
                             <label htmlFor="password">Password</label>
-                            <input type="password" name='password' id='password' onChange={onChange} minLength={5} />
+                            <input type="password" name='password' id='password' onChange={onChangePass} value={changePass.password} autoComplete="off" minLength={5} />
                         </div>
                         <div className='form-control'>
                             <label htmlFor="cpassword">Confirm Password</label>
-                            <input type="password" name='cpassword' id='cpassword' onChange={onChange} minLength={5} />
+                            <input type="password" name='cpassword' id='cpassword' onChange={onChangePass} value={changePass.cpassword}  autoComplete="off" minLength={5} />
                         </div>
                         <div className="logBtn">
                             <button type="submit">Change Password</button>
                         </div>
 
-                    </form> */}
+                    </form>
 
                 </div>
             </div>

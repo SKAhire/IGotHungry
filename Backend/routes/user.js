@@ -59,10 +59,7 @@ router.post('/adduser', upload.single('profileImg') , [
 
     try {
 
-        const userVal = await Users.findOne({ username: req.body.username });
-        if (userVal) {
-            return res.status(400).json({ success, error: "This username is already been taken!" })
-        }
+        
         const emailVal = await Users.findOne({ email: req.body.email });
         if (emailVal) {
             return res.status(400).json({ success, error: "This email is already in use! Try login" })
@@ -101,10 +98,8 @@ router.post('/adduser', upload.single('profileImg') , [
     }
 })
 
-//Edit user
-router.put('/edituser/:id', [
-    body('username', 'Enter a valid name').isLength({ min: 3 }),
-    body('email', "Enter a valid Email").isEmail(),
+// Edit Password
+router.put('/change-password', fetchuser, [
     body('password', 'Password must have a minimum of 5 characters').isLength({ min: 5 })
 ], async (req, res) => {
 
@@ -116,41 +111,34 @@ router.put('/edituser/:id', [
 
     try {
 
-        const findUser = await Users.findById(req.params.id);
+        const findUser = await Users.findById(req.user.id);
         if (!findUser) {
-            return res.status(500).json({ success, error: "Internal Server Error" })
-        }
-        const userVal = await Users.findOne({ username: req.body.username });
-        if (userVal) {
-            return res.status(400).json({ success, error: "This username is already been taken!" })
-        }
-        const emailVal = await Users.findOne({ email: req.body.email });
-        if (emailVal) {
-            return res.status(400).json({ success, error: "This email is already in use! Try login" })
+            return res.status(500).json({ success, error: "Internal Server Error (1)" })
+        }else{
+            console.log('done')
         }
 
-        const { username, email, password } = req.body;
+        const { password } = req.body;
+        console.log(password)
 
         const salt = bcrypt.genSaltSync(10);
         const secPass = await bcrypt.hash(password, salt);
-        const user = await Users.findByIdAndUpdate( req.params.id,{
-            username: username,
-            email: email,
+        const user = await Users.findByIdAndUpdate( req.user.id,{
             password: secPass
         })
 
-        const saveUser = await user.save();
+        // const saveUser = await user.save();
         success = true;
-        res.send({saveUser, success})
-        console.log(saveUser)
+        res.send({user, success})
+        console.log(user)
     } catch (error) {
         console.log(error.message);
-        res.status(500).send("Internal Server Error");
+        res.status(500).send("Internal Server Error (2)");
     }
 })
 
 //Edit user
-router.put('/edituser',fetchuser, [
+router.put('/edituser', fetchuser, [
     body('username', 'Enter a valid name').isLength({ min: 3 }),
     body('email', "Enter a valid Email").isEmail(),
 ], async (req, res) => {
@@ -167,7 +155,6 @@ router.put('/edituser',fetchuser, [
         if (!findUser) {
             return res.status(500).json({ success, error: "Internal Server Error" })
         }
-        const userVal = await Users.findOne({ username: req.body.username });
         const emailVal = await Users.findOne({ email: req.body.email });
         if (emailVal) {
             return res.status(400).json({ success, error: "This email is already in use! Try login" })

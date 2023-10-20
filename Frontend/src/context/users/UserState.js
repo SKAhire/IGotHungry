@@ -78,17 +78,39 @@ const UserState = (props) => {
             })
         })
         const json = await response.json();
+        setUser(json)
         if (json.success) {
             // save the auth token and redirect 
             // localStorage.setItem('token', json.authToken);
-            navigate('/my-profile')
+            // navigate('/my-profile')
+            alert('Credentials Updated Successfully!')
+        } else {
+            alert('Invalid Credentials')
+        }
+    }
+
+    const editPass = async (password) => {
+        const response = await fetch(`${host}/user/change-password`,{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': token
+            },
+            body: JSON.stringify({
+                password: password
+            })
+        })
+        const json = await response.json();
+        setUser(json)
+        if (json.success) {
+            alert('Credentials Updated Successfully!')
         } else {
             alert('Invalid Credentials')
         }
     }
 
     return (
-        <UserContext.Provider value={{ user, getUser, userLogin, userSignin, editUser }}>
+        <UserContext.Provider value={{ user, getUser, userLogin, userSignin, editUser, editPass }}>
             {props.children}
         </UserContext.Provider>
     )

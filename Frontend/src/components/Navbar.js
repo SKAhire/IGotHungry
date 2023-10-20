@@ -13,6 +13,7 @@ const Navbar = () => {
             setScrollTop({ scrollImg: scrollImg, imgClass: 'logoImg', navContainer: 'navContainer' })
         }
     }
+    
     return (
         <>
 

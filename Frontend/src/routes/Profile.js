@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import EditUser from '../components/EditUser';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            navigate('/')
+        }
+        // eslint-disable-next-line
+    })
+    const handleLogout = ()=>{
+        localStorage.removeItem('token')
+        navigate('/')
+    }
     return (
         <>
 
@@ -24,7 +35,7 @@ const Profile = () => {
                 <div className="profileMenu">
                     <div className="menuOptions">
                         <Link to="/bookmark">Bookmark</Link>
-                        <Link to="/logout">Logout</Link>
+                        <button onClick={handleLogout}>Logout</button>
                     </div>
                 </div>
                 <div className="profileCont">
