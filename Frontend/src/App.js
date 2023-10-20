@@ -8,8 +8,10 @@ import Contact from './routes/Contact';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
 import Profile from './routes/Profile';
+import MainRecipes from './routes/MainRecipes'
 import Footer from './components/Footer';
 import UserState from './context/users/UserState';
+
 import './App.css';
 
 import {
@@ -17,6 +19,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+
 
 
 function App() {
@@ -35,6 +38,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/my-profile" element={<Profile />} />
+            <Route exact path="/my-profile/recipes" element={<MainRecipes />} />
           </Routes>
           <Footer />
         </UserState>

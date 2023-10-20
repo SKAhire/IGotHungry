@@ -708,7 +708,8 @@ body {
 .relatedCont {
   margin: 15px 10px;
 }
-.related{
+
+.related {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -716,18 +717,21 @@ body {
   margin: 10px;
 }
 
-.rRecipe{
+.rRecipe {
   margin: 5px;
   width: 30%;
   text-align: center;
 }
-.rRecipe:hover{
+
+.rRecipe:hover {
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
 }
-.rRecipe img{
+
+.rRecipe img {
   height: 190px;
   width: 190px;
 }
+
 .lComment {
   padding: 10px;
   margin: 10px 0px;
@@ -736,7 +740,9 @@ body {
   border-radius: 25px;
 }
 
-.relatedCont h3, .lComment h3, .vComment h3 {
+.relatedCont h3,
+.lComment h3,
+.vComment h3 {
   font-family: var(--head_font);
   color: var(--purpel);
   font-weight: normal;
@@ -767,7 +773,8 @@ body {
   align-self: flex-end;
   box-sizing: border-box;
   width: 100%;
-  padding: 10px 10px 6px;;
+  padding: 10px 10px 6px;
+  ;
   transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid;
   border-radius: 4px;
@@ -775,15 +782,18 @@ body {
   height: 56px;
 }
 
-.form-control input:hover, .form-control textarea:hover {
+.form-control input:hover,
+.form-control textarea:hover {
   border-bottom-color: var(--purpel);
   background: #ececec;
 }
 
-.form-control input:focus, .form-control textarea:focus {
+.form-control input:focus,
+.form-control textarea:focus {
   border-color: var(--purpel_light);
 }
-.form-control textarea{
+
+.form-control textarea {
   color: var(--purpel);
   border-bottom-color: var(--purpel_light);
   font-size: 1rem;
@@ -799,7 +809,8 @@ body {
   height: 200px;
   resize: none;
 }
-.lComment button{
+
+.lComment button {
   color: var(--white_bg);
   background: var(--purpel);
   padding: 10px 20px;
@@ -809,17 +820,19 @@ body {
   border: none;
   cursor: pointer;
 }
-.lComment button:hover{
+
+.lComment button:hover {
   background: var(--white_bg);
   color: var(--purpel_light);
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5);
 }
 
-.vComment{
+.vComment {
   padding: 10px;
   margin: 10px 0px;
 }
-.vComment h3{
+
+.vComment h3 {
   border-bottom: 2px solid var(--purpel);
 }
 
@@ -828,18 +841,21 @@ body {
   background: var(--white_bg);
   padding: 10px;
 }
-.mainComment h4{
+
+.mainComment h4 {
   font-family: var(--head_font);
   color: var(--purpel);
   font-weight: normal;
   font-size: large;
 }
-.mainComment h5{
+
+.mainComment h5 {
   font-family: var(--head_font);
   color: var(--purpel_light);
   font-weight: normal;
 }
-.mainComment button{
+
+.mainComment button {
   background: none;
   color: var(--purpel);
   border: none;
@@ -847,20 +863,23 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
-.mainComment button:hover{
+
+.mainComment button:hover {
   color: var(--purpel_light);
 }
-.rComment{
+
+.rComment {
   margin: 15px;
   margin-left: 45px;
   padding: 5px;
   border-left: 2px solid var(--purpel);
 }
 
-.rCommentv{
+.rCommentv {
   display: none;
 }
-.rCommentf{
+
+.rCommentf {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -870,78 +889,121 @@ body {
   z-index: 110;
   background: rgba(0, 0, 0, 0.63);
 }
-.rCommentf .lComment{
+
+.rCommentf .lComment {
   width: 45%;
   margin: auto;
 }
-.rCommentf .lComment .form-control{
+
+.rCommentf .lComment .form-control {
   width: 100%;
 }
-.rCommentf .lComment .closeR{
+
+.rCommentf .lComment .closeR {
   float: right;
   top: 0;
 }
 
-.loginF{
+.loginF {
   width: 40%;
   margin: auto;
 }
-.loginF h3{
+
+.loginF h3 {
   text-align: center;
 }
-.loginF .form-control{
+
+.loginF .form-control {
   width: 100%;
 }
-.logBtn{
+
+.logBtn {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.logBtn a{
+
+.logBtn a {
   font-family: var(--head_font);
   color: var(--purpel);
 }
-.logBtn a:hover{
+
+.logBtn a:hover {
   color: var(--purpel_light);
   text-decoration: underline;
 }
 
 /* profile page */
-.profileMain{
+.profileMain {
   display: flex;
 }
-.profileMenu{
+
+.profileMenu {
   position: sticky;
   background: var(--white_bg);
   z-index: 99;
   top: 0;
 }
-.menuOptions{
+
+.menuOptions {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
   margin: 20px 10px;
 }
-.menuOptions a, .menuOptions button{
+
+.menuOptions a,
+.menuOptions button {
   color: var(--purpel);
   font-weight: bold;
   padding: 5px 40px;
   width: 100%;
   border: none;
 }
-.menuOptions a:hover, .menuOptions button:hover{
+
+.menuOptions a:hover,
+.menuOptions button:hover {
   color: white;
   background: var(--purpel);
 
 }
 
-.profileCont{
+.profileCont {
   padding: 60px 12px;
   margin: 10px 100px;
   width: 100%;
 }
+
 .profileCont .loginF {
   width: 70%;
+}
+
+
+/* main recipes */
+.MainRecipesCont {
+  padding: 60px 12px;
+  margin: 10px 100px;
+}
+
+.recipesOp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipesOp a {
+  color: var(--white_bg);
+  background: var(--purpel);
+  padding: 10px 20px;
+  margin: 10px 0px;
+  font-family: var(--head_font);
+  font-size: x-large;
+}
+
+.recipesOp a:hover {
+  background: var(--white_bg);
+  color: var(--purpel_light);
+  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5)
 }

@@ -10,10 +10,7 @@ const Profile = () => {
         }
         // eslint-disable-next-line
     })
-    const handleLogout = ()=>{
-        localStorage.removeItem('token')
-        navigate('/')
-    }
+    
     return (
         <>
 
@@ -31,7 +28,8 @@ const Profile = () => {
                 </div>
             </div>
 
-            <div className="profileMain">
+            <EditUser />
+            {/* <div className="profileMain">
                 <div className="profileMenu">
                     <div className="menuOptions">
                         <Link to="/bookmark">Bookmark</Link>
@@ -41,7 +39,7 @@ const Profile = () => {
                 <div className="profileCont">
                     <EditUser />
                 </div>
-            </div>
+            </div> */}
 
         </>
     )
