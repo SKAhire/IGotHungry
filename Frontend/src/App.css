@@ -643,7 +643,7 @@ body {
 }
 
 .mainInfo li {
-  /* padding: 0px 5px; */
+  padding: 0px 5px;
   color: var(--white_bg);
 }
 
@@ -1006,4 +1006,41 @@ body {
   background: var(--white_bg);
   color: var(--purpel_light);
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.5)
+}
+
+.recipeTable{
+  width: 100%;
+}
+
+.recipeTable td, .recipeTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.recipeTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--purpel);
+  color: white;
+}
+
+.recipeTable tr:nth-child(even){background-color: var(--purpel_light)}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination li{
+  list-style-type: none;
+  padding: 5px;
+}
+.pagination button{
+  background: var(--purpel);
+  padding: 5px 14px;
+  border: none;
+  cursor: pointer;
+  color: var(--white_bg);
+  border-radius: 50%;
 }
