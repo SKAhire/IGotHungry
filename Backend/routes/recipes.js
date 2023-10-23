@@ -5,7 +5,7 @@ const { header } = require('express-validator');
 
 
 //fetch recipes
-router.get('/', async (req, res) => {
+router.get('/get-recipes', async (req, res) => {
     try {
         const recipes = await Recipes.find();
         res.json(recipes)
@@ -22,10 +22,11 @@ router.post('/addrecipies', async (req, res, next) => {
     let success = false
 
     try {
-        const { title, readyInMin, servings, image, summary, cuisine, course, categoiry, quick, dinner, vegetarian, healty, instantPot, vegan, mealPrep, soup, salads, steps, number, stitle, sdesc, simage, recipeInfo, ingredients, instructions } = req.body
+        const { title,author, readyInMin, servings, image, summary, cuisine, course, categoiry, quick, dinner, vegetarian, healty, instantPot, vegan, mealPrep, soup, salads, steps, number, stitle, sdesc, simage, recipeInfo, ingredients, instructions } = req.body
 
         const recipes = await Recipes.create({
             title: title,
+            author:author,
             readyInMin: readyInMin,
             servings: servings,
             image: image,
@@ -73,10 +74,11 @@ router.put('/editrecipies/:id', async (req, res) => {
         if (!findRecipe) {
             return res.status(500).json({ success, error: "Internal Server Error" })
         }
-        const { title, veg, cheap, quick, sustainable, iname, inameclean, iimage, iamount, readyInMin, servings, image, summary, dishTypes, instructions, steps } = req.body
+        const { title, author, veg, cheap, quick, sustainable, iname, inameclean, iimage, iamount, readyInMin, servings, image, summary, dishTypes, instructions, steps } = req.body
 
         const editrecipes = await Recipes.findByIdAndUpdate(req.params.id, {
             title: title,
+            author: author,
             veg: veg,
             cheap: cheap,
             quick: quick,

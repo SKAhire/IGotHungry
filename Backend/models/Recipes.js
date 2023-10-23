@@ -6,6 +6,10 @@ const recipesSchema = new Schema({
         type: String,
         require: true
     },
+    author: {
+        type: String,
+        require: true
+    },
     readyInMin: {
         type: String,
         require: true

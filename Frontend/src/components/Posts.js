@@ -1,6 +1,10 @@
 import React from 'react';
+// import RecipeContext from '../context/recipes/RecipeContext';
 
 const Posts = ({ posts, loading }) => {
+
+    
+
     if (loading) {
         return <h2>Loading...</h2>;
     }
@@ -19,9 +23,9 @@ const Posts = ({ posts, loading }) => {
                 </thead>
                 <tbody>
                     {posts.map(post => (
-                        <tr key={post.id}>
+                        <tr key={post._id}>
                             <td>{post.title}</td>
-                            <td>{post.id}</td>
+                            <td>{post.author}</td>
                             <td>Action</td>
                         </tr>
                     ))}

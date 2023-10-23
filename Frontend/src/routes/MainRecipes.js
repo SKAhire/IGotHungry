@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import UserContext from '../context/users/UserContext'
+import RecipeContext from '../context/recipes/RecipeContext';
 import Posts from '../components/Posts';
 import Pagination from '../components/Pagination';
-import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
 
 const AddRecipes = () => {
@@ -14,23 +14,25 @@ const AddRecipes = () => {
     const [postsPerPage] = useState(10);
 
     // Get current posts
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+    // Change page
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-      setPosts(res.data);
-      setLoading(false);
-    };
 
-    fetchPosts();
-  }, []);
+    const recipeContext = useContext(RecipeContext);
+    const { recipes, getRecipes } = recipeContext;
+
+
+    useEffect(() => {
+
+            setLoading(true);
+            getRecipes()
+            setPosts(recipes);
+            setLoading(false);
+    }, [recipes, getRecipes]);
 
     const context = useContext(UserContext);
     const { user, getUser } = context;
@@ -69,12 +71,12 @@ const AddRecipes = () => {
                     <Link to="/my-profile/add-recipe">Add +</Link>
                 </div>
                 <div className="paginationDiv">
-                <Posts posts={currentPosts} loading={loading} />
-      <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={posts.length}
-        paginate={paginate}
-      />
+                    <Posts posts={currentPosts} loading={loading} />
+                    <Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={posts.length}
+                        paginate={paginate}
+                    />
                 </div>
             </div>
 
