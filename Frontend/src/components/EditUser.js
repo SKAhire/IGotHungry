@@ -13,7 +13,7 @@ const EditUser = () => {
             getUser()
         }
         // eslint-disable-next-line
-    })
+    },[])
 
     const [credentials, setCredentials] = useState({ ename: user.username, eemail: user.email })
     const [changePass, setChangePass] = useState({ password: "", cpassword: "" })

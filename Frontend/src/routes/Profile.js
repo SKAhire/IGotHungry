@@ -9,7 +9,7 @@ const Profile = () => {
             navigate('/')
         }
         // eslint-disable-next-line
-    })
+    },[])
     
     return (
         <>

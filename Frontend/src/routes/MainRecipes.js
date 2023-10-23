@@ -1,23 +1,52 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import UserContext from '../context/users/UserContext'
+import Posts from '../components/Posts';
+import Pagination from '../components/Pagination';
+import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
 
 const AddRecipes = () => {
+
+    // pagination
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(10);
+
+    // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      setPosts(res.data);
+      setLoading(false);
+    };
+
+    fetchPosts();
+  }, []);
+
     const context = useContext(UserContext);
     const { user, getUser } = context;
     const navigate = useNavigate();
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getUser()
-            if(!user._id==="652a8cfca1d3daa036a9b045"){
+            if (!user._id === "652a8cfca1d3daa036a9b045") {
                 navigate("/")
             }
         }
         // eslint-disable-next-line
-    })
+    }, [])
 
-  return (
-    <>
+    return (
+        <>
 
             <div className="Banner" style={{ 'backgroundImage': `url("../images/banner/banner_2.jpg")` }}>
                 <div className="bannerDiv">
@@ -33,16 +62,24 @@ const AddRecipes = () => {
                 </div>
             </div>
 
-            
-           <div className="MainRecipesCont">
-            <div className="recipesOp">
-                <Link to="/my-profile">Back</Link>
-                <Link to="/my-profile/add-recipe">Add +</Link>
+
+            <div className="MainRecipesCont">
+                <div className="recipesOp">
+                    <Link to="/my-profile">Back</Link>
+                    <Link to="/my-profile/add-recipe">Add +</Link>
+                </div>
+                <div className="paginationDiv">
+                <Posts posts={currentPosts} loading={loading} />
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={posts.length}
+        paginate={paginate}
+      />
+                </div>
             </div>
-           </div>
 
         </>
-  )
+    )
 }
 
 export default AddRecipes
