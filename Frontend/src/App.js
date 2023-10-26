@@ -9,6 +9,7 @@ import Login from './routes/Login';
 import Signup from './routes/Signup';
 import Profile from './routes/Profile';
 import MainRecipes from './routes/MainRecipes'
+import AddRecipe from './routes/AddRecipe';
 import Footer from './components/Footer';
 import UserState from './context/users/UserState';
 import RecipeState from './context/recipes/RecipeState';
@@ -40,7 +41,8 @@ function App() {
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/signup" element={<Signup />} />
               <Route exact path="/my-profile" element={<Profile />} />
-              <Route exact path="/my-profile/recipes" element={<MainRecipes />} />
+              <Route exact path="/my-profile/recipes/" element={<MainRecipes />} />
+              <Route exact path="/recipes/add-recipe" element={<AddRecipe />} />
             </Routes>
             <Footer />
           </RecipeState>

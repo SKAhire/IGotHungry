@@ -21,6 +21,7 @@ a {
 
 body {
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -762,7 +763,7 @@ body {
   font-size: larger;
 }
 
-.form-control input {
+.form-control input, .form-control select {
   color: var(--purpel);
   border-bottom-color: var(--purpel_light);
   font-size: 1.3rem;
@@ -1023,9 +1024,24 @@ body {
   text-align: left;
   background-color: var(--purpel);
   color: white;
+  font-family: var(--head_font);
+  font-weight: normal;
+
 }
 
 .recipeTable tr:nth-child(even){background-color: var(--purpel_light)}
+
+.recipeTable a{
+  margin: 5px;
+  color: black;
+}
+.recipeTable a i{
+  margin: 3px;
+}
+
+.recipeTable a:hover{
+  color: var(--purpel);
+}
 
 .pagination {
   display: flex;
@@ -1043,4 +1059,25 @@ body {
   cursor: pointer;
   color: var(--white_bg);
   border-radius: 50%;
+}
+
+.recipeCont{
+  padding: 60px 12px;
+  margin: 10px 100px;
+}
+.recipeCont .loginF {
+  width: 70%;
+}
+.recipeCont p{
+  color: var(--purpel);
+}
+.recipeCat{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.recipeCat .form-control{
+  width: 30%;
+  margin: 10px;
 }

@@ -5,7 +5,7 @@ import Posts from '../components/Posts';
 import Pagination from '../components/Pagination';
 import { Link, useNavigate } from 'react-router-dom';
 
-const AddRecipes = () => {
+const MainRecipes = () => {
 
     // pagination
     const [posts, setPosts] = useState([]);
@@ -68,7 +68,7 @@ const AddRecipes = () => {
             <div className="MainRecipesCont">
                 <div className="recipesOp">
                     <Link to="/my-profile">Back</Link>
-                    <Link to="/my-profile/add-recipe">Add +</Link>
+                    <Link to="/recipes/add-recipe">Add +</Link>
                 </div>
                 <div className="paginationDiv">
                     <Posts posts={currentPosts} loading={loading} />
@@ -84,4 +84,4 @@ const AddRecipes = () => {
     )
 }
 
-export default AddRecipes
+export default MainRecipes

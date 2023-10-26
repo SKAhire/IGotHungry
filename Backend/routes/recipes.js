@@ -74,26 +74,35 @@ router.put('/editrecipies/:id', async (req, res) => {
         if (!findRecipe) {
             return res.status(500).json({ success, error: "Internal Server Error" })
         }
-        const { title, author, veg, cheap, quick, sustainable, iname, inameclean, iimage, iamount, readyInMin, servings, image, summary, dishTypes, instructions, steps } = req.body
+        const { title,author, readyInMin, servings, image, summary, cuisine, course, categoiry, quick, dinner, vegetarian, healty, instantPot, vegan, mealPrep, soup, salads, steps, number, stitle, sdesc, simage, recipeInfo, ingredients, instructions } = req.body
 
         const editrecipes = await Recipes.findByIdAndUpdate(req.params.id, {
             title: title,
-            author: author,
-            veg: veg,
-            cheap: cheap,
-            quick: quick,
-            sustainable: sustainable,
-            iname: iname,
-            inameclean: inameclean,
-            iimage: iimage,
-            iamount: iamount,
+            author:author,
             readyInMin: readyInMin,
             servings: servings,
             image: image,
             summary: summary,
-            dishTypes: dishTypes,
+            cuisine: cuisine,
+            course: course,
+            categoiry:categoiry,
+            quick: quick,
+            dinner: dinner,
+            vegetarian: vegetarian,
+            healty: healty,
+            instantPot: instantPot,
+            vegan: vegan,
+            mealPrep: mealPrep,
+            soup: soup,
+            salads: salads,
+            steps:steps,
+            number: number,
+            stitle: stitle,
+            sdesc: sdesc,
+            simage: simage,
+            recipeInfo: recipeInfo,
+            ingredients: ingredients,
             instructions: instructions,
-            steps: steps
         });
 
         console.log(editrecipes)

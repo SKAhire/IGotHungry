@@ -1,5 +1,5 @@
 import React from 'react';
-// import RecipeContext from '../context/recipes/RecipeContext';
+import { Link } from 'react-router-dom';
 
 const Posts = ({ posts, loading }) => {
 
@@ -26,7 +26,9 @@ const Posts = ({ posts, loading }) => {
                         <tr key={post._id}>
                             <td>{post.title}</td>
                             <td>{post.author}</td>
-                            <td>Action</td>
+                            <td><Link to={`/my-profile/edit-recipe/${post._id}`}><i className="fa-regular fa-pen-to-square m-2 cardIcon" to="/"></i>Edit</Link>
+                            <Link to={`/my-profile/delete-recipe/${post._id}`}><i className="fa-regular fa-trash-can m-2 cardIcon" ></i>Delete</Link>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
