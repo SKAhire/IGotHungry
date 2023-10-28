@@ -1081,3 +1081,20 @@ body {
   width: 30%;
   margin: 10px;
 }
+
+.catCheck .form-control{
+  display: inline;
+}
+.catCheck input{
+  margin: 5px;
+  width: 10%;
+  height: 30px !important;
+}
+
+.stepBtn{
+  flex-direction: row;
+}
+.stepBtn button{
+  margin: 5px;
+}
+

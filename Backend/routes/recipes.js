@@ -100,7 +100,6 @@ router.put('/editrecipies/:id', async (req, res) => {
             stitle: stitle,
             sdesc: sdesc,
             simage: simage,
-            recipeInfo: recipeInfo,
             ingredients: ingredients,
             instructions: instructions,
         });
