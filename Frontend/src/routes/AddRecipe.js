@@ -1,10 +1,27 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import $ from 'jquery';
 
 
 
 const AddRecipe = () => {
 
+  var loop_count = 1;
+  const handleAddStep = (e) => {
+    e.preventDefault();
+    loop_count++;
+    var html = "<div className='steps stepCount_loop_count"+loop_count+"'><div className='form-control'><label htmlFor='snumber'>Step Number "+loop_count+"</label><input type='hidden' name='snumber' id='snumber' value={"+loop_count+"} onChange={onChange} /></div>";
+    html+= "<div className='form-control'><label htmlFor='stitle'>Step Title</label><input type='text' name='stitle' id='stitle' onChange={onChange} /><p>(*Step Name)</p></div>";
+    html+= "<div className='form-control'><label htmlFor='sdesc'>Step Description</label><textarea name='sdesc' id='sdesc' onChange={onChange} ></textarea><p>(Description of the step)</p></div>";
+    html+= "<div className='form-control'><label htmlFor='simage'>Step Image</label><input type='file' name='simage' id='simage' onChange={onChange} /><p>(size recommended)</p></div>";
+    html+= "<div className='logBtn stepBtn'><button onClick={handleRemoveStep}>Remove Step</button></div></div>"
+
+    $('#addStep').append(html)
+  }
+
+  const handleRemoveStep = ()=>{
+
+  }
 
   const navigate = useNavigate();
   const onChange = (e) => {
@@ -38,7 +55,7 @@ const AddRecipe = () => {
           <div className="lComment">
             <h3>Add Recipe</h3>
 
-            <form onSubmit={handleSubmit} method='Post'>
+            <form  method='Post'>
               <div className='form-control'>
                 <label htmlFor="title">Recipe Title</label>
                 <input type="text" name='title' id='title' onChange={onChange} />
@@ -93,35 +110,43 @@ const AddRecipe = () => {
               </div>
 
               <div className="stepCont">
+
                 <h3>Recipe Steps</h3>
-                <div className="steps">
 
-                  <div className='form-control'>
-                    <label htmlFor="snumber">Step Number 1</label>
-                    <input type="hidden" name='snumber' id='snumber' value={1} onChange={onChange} />
-                  </div>
-                  <div className='form-control'>
-                    <label htmlFor="stitle">Step Title</label>
-                    <input type="text" name='stitle' id='stitle' onChange={onChange} />
-                    <p>(*Step Name)</p>
-                  </div>
-                  <div className='form-control'>
-                    <label htmlFor="sdesc">Step Description</label>
-                    <textarea name='sdesc' id='sdesc' onChange={onChange} ></textarea>
-                    <p>(Description of the step)</p>
-                  </div>
-                  <div className='form-control'>
-                    <label htmlFor="simage">Step Image</label>
-                    <input type="file" name='simage' id='simage' onChange={onChange} />
-                    <p>(size recommended)</p>
+                <div id="addStep">
+
+                  <div className="steps">
+
+                    <div className='form-control'>
+                      <label htmlFor="snumber">Step Number 1</label>
+                      <input type="hidden" name='snumber' id='snumber' value={1} onChange={onChange} />
+                    </div>
+                    <div className='form-control'>
+                      <label htmlFor="stitle">Step Title</label>
+                      <input type="text" name='stitle' id='stitle' onChange={onChange} />
+                      <p>(*Step Name)</p>
+                    </div>
+                    <div className='form-control'>
+                      <label htmlFor="sdesc">Step Description</label>
+                      <textarea name='sdesc' id='sdesc' onChange={onChange} ></textarea>
+                      <p>(Description of the step)</p>
+                    </div>
+                    <div className='form-control'>
+                      <label htmlFor="simage">Step Image</label>
+                      <input type="file" name='simage' id='simage' onChange={onChange} />
+                      <p>(size recommended)</p>
+                    </div>
+
+                    <div className="logBtn stepBtn">
+                      <button onClick={handleRemoveStep}>Remove Step</button>
+                    </div>
+
                   </div>
 
-                  <div className="logBtn stepBtn">
-                    <button>Remove Step</button>
-                  </div>
                 </div>
+
                 <div className="logBtn stepBtn">
-                  <button>Add Step</button>
+                  <button onClick={handleAddStep}>Add Step</button>
                 </div>
               </div>
 
@@ -184,7 +209,7 @@ const AddRecipe = () => {
               </div>
 
               <div className="logBtn">
-                <button type="submit">Submit</button>
+                <button onSubmit={handleSubmit} type="submit">Submit</button>
               </div>
             </form>
 
