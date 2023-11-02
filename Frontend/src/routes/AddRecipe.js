@@ -10,17 +10,18 @@ const AddRecipe = () => {
   const handleAddStep = (e) => {
     e.preventDefault();
     loop_count++;
-    var html = "<div className='steps stepCount_loop_count"+loop_count+"'><div className='form-control'><label htmlFor='snumber'>Step Number "+loop_count+"</label><input type='hidden' name='snumber' id='snumber' value={"+loop_count+"} onChange={onChange} /></div>";
+    var html = "<div className='steps' id = 'stepCount_loop_count_"+loop_count+"'><div className='form-control'><label htmlFor='snumber'>Step Number "+loop_count+"</label><input type='hidden' name='snumber' id='snumber' value={"+loop_count+"} onChange={onChange} /></div>";
     html+= "<div className='form-control'><label htmlFor='stitle'>Step Title</label><input type='text' name='stitle' id='stitle' onChange={onChange} /><p>(*Step Name)</p></div>";
     html+= "<div className='form-control'><label htmlFor='sdesc'>Step Description</label><textarea name='sdesc' id='sdesc' onChange={onChange} ></textarea><p>(Description of the step)</p></div>";
     html+= "<div className='form-control'><label htmlFor='simage'>Step Image</label><input type='file' name='simage' id='simage' onChange={onChange} /><p>(size recommended)</p></div>";
-    html+= "<div className='logBtn stepBtn'><button onClick={handleRemoveStep}>Remove Step</button></div></div>"
+    html+= "<div className='logBtn stepBtn'><button type='button' onClick=handleRemoveStep()>Remove Step</button></div></div>"
 
     $('#addStep').append(html)
   }
 
   const handleRemoveStep = ()=>{
-
+    // e.preventDefault();
+    console.log(loop_count)
   }
 
   const navigate = useNavigate();
@@ -137,9 +138,9 @@ const AddRecipe = () => {
                       <p>(size recommended)</p>
                     </div>
 
-                    <div className="logBtn stepBtn">
+                    {/* <div className="logBtn stepBtn">
                       <button onClick={handleRemoveStep}>Remove Step</button>
-                    </div>
+                    </div> */}
 
                   </div>
 
